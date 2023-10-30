@@ -32,7 +32,7 @@ namespace Makanan
         {
             try
             {
-                query = string.Format("select * from login where username = '{0}' and password = '{1}'", txtUser.Text, txtPass.Text);
+                query = string.Format("select * from signup where username = '{0}' and password = '{1}'", txtUser.Text, txtPass.Text);
                 ds.Clear();
                 koneksi.Open();
                 perintah = new MySqlCommand(query, koneksi);
@@ -50,6 +50,7 @@ namespace Makanan
                         {
                             Customer Customer = new Customer();
                             Customer.Show();
+                            this.Hide();
                         }
                         else
                         {
@@ -57,7 +58,7 @@ namespace Makanan
                         }
                     }
                 }
-                this.Hide();
+
             }
             catch (Exception ex) 
             {

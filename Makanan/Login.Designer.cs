@@ -33,12 +33,12 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.logoRegister = new System.Windows.Forms.Label();
+            this.txtRegis = new System.Windows.Forms.Button();
+            this.descRegis = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginLogo = new System.Windows.Forms.Label();
-            this.descRegis = new System.Windows.Forms.Label();
-            this.txtRegis = new System.Windows.Forms.Button();
-            this.logoRegister = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -102,6 +102,51 @@
             this.panel1.Size = new System.Drawing.Size(352, 498);
             this.panel1.TabIndex = 6;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(42, 241);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(269, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Don\'t have an account? Register one!";
+            // 
+            // logoRegister
+            // 
+            this.logoRegister.AutoSize = true;
+            this.logoRegister.BackColor = System.Drawing.Color.Transparent;
+            this.logoRegister.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoRegister.ForeColor = System.Drawing.Color.White;
+            this.logoRegister.Location = new System.Drawing.Point(115, 173);
+            this.logoRegister.Name = "logoRegister";
+            this.logoRegister.Size = new System.Drawing.Size(136, 36);
+            this.logoRegister.TabIndex = 11;
+            this.logoRegister.Text = "Register";
+            // 
+            // txtRegis
+            // 
+            this.txtRegis.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegis.Location = new System.Drawing.Point(84, 272);
+            this.txtRegis.Name = "txtRegis";
+            this.txtRegis.Size = new System.Drawing.Size(210, 46);
+            this.txtRegis.TabIndex = 11;
+            this.txtRegis.Text = "Register an Account";
+            this.txtRegis.UseVisualStyleBackColor = true;
+            this.txtRegis.Click += new System.EventHandler(this.txtRegis_Click);
+            // 
+            // descRegis
+            // 
+            this.descRegis.AutoSize = true;
+            this.descRegis.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descRegis.ForeColor = System.Drawing.Color.White;
+            this.descRegis.Location = new System.Drawing.Point(51, 237);
+            this.descRegis.Name = "descRegis";
+            this.descRegis.Size = new System.Drawing.Size(269, 17);
+            this.descRegis.TabIndex = 11;
+            this.descRegis.Text = "Don\'t have an account? Register one!";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -124,51 +169,6 @@
             this.loginLogo.Size = new System.Drawing.Size(96, 36);
             this.loginLogo.TabIndex = 10;
             this.loginLogo.Text = "Login";
-            // 
-            // descRegis
-            // 
-            this.descRegis.AutoSize = true;
-            this.descRegis.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descRegis.ForeColor = System.Drawing.Color.White;
-            this.descRegis.Location = new System.Drawing.Point(51, 237);
-            this.descRegis.Name = "descRegis";
-            this.descRegis.Size = new System.Drawing.Size(269, 17);
-            this.descRegis.TabIndex = 11;
-            this.descRegis.Text = "Don\'t have an account? Register one!";
-            // 
-            // txtRegis
-            // 
-            this.txtRegis.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegis.Location = new System.Drawing.Point(84, 272);
-            this.txtRegis.Name = "txtRegis";
-            this.txtRegis.Size = new System.Drawing.Size(210, 46);
-            this.txtRegis.TabIndex = 11;
-            this.txtRegis.Text = "Register an Account";
-            this.txtRegis.UseVisualStyleBackColor = true;
-            this.txtRegis.Click += new System.EventHandler(this.txtRegis_Click);
-            // 
-            // logoRegister
-            // 
-            this.logoRegister.AutoSize = true;
-            this.logoRegister.BackColor = System.Drawing.Color.Transparent;
-            this.logoRegister.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoRegister.ForeColor = System.Drawing.Color.White;
-            this.logoRegister.Location = new System.Drawing.Point(115, 173);
-            this.logoRegister.Name = "logoRegister";
-            this.logoRegister.Size = new System.Drawing.Size(136, 36);
-            this.logoRegister.TabIndex = 11;
-            this.logoRegister.Text = "Register";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(42, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Don\'t have an account? Register one!";
             // 
             // label2
             // 
@@ -229,10 +229,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox textPassword;
-        private System.Windows.Forms.Button userLogin;
-        private System.Windows.Forms.Button userExit;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtUser;
