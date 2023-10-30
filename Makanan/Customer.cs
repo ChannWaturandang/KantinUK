@@ -91,7 +91,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("insert into customer (customer_id, first_name, last_name, email, phone_number, table_num) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", customerID.Text, customerFirst.Text, CustomerLast.Text, customerNum.Text, customerAddress.Text, TableBox.Text);
+                query = string.Format("insert into customer (customer_id, first_name, last_name, email, phone_number, table_num) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", customerID.Text, customerFirst.Text, CustomerLast.Text, customerNum.Text, customerAddress.Text, customerTable.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
@@ -120,7 +120,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("update customer set customer_id = '{0}', first_name = '{1}', last_name = '{2}', email='{3}', phone_number='{4}', table_num='{5}' where customer_id='{0}'", customerID.Text, customerFirst.Text, CustomerLast.Text, customerNum.Text, customerAddress.Text, TableBox.Text);
+                query = string.Format("update customer set customer_id = '{0}', first_name = '{1}', last_name = '{2}', email='{3}', phone_number='{4}', table_num='{5}' where customer_id='{0}'", customerID.Text, customerFirst.Text, CustomerLast.Text, customerNum.Text, customerAddress.Text, customerTable.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -153,7 +153,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("delete from customer where customer_id={0}", customerID.Text);
+                query = string.Format("delete from customer where customer_id = '{0}' ", customerID.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -167,6 +167,33 @@ namespace Makanan
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            customerID.Text = "";
+            customerFirst.Text = "";
+            CustomerLast.Text = "";
+            customerAddress.Text = "";
+            customerNum.Text = "";
+            customerTable.Text = "";
+        }
+
+        private void customerAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDrinks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Drinks Drinks = new Drinks();
+            Drinks.Show();
         }
 
         private void btnFoods_Click(object sender, EventArgs e)

@@ -147,6 +147,7 @@
             this.btnDrinks.TabIndex = 1;
             this.btnDrinks.Text = "Drinks";
             this.btnDrinks.UseVisualStyleBackColor = false;
+            this.btnDrinks.Click += new System.EventHandler(this.btnDrinks_Click);
             // 
             // btnFoods
             // 
@@ -208,6 +209,7 @@
             this.IdTxt.Name = "IdTxt";
             this.IdTxt.Size = new System.Drawing.Size(122, 20);
             this.IdTxt.TabIndex = 12;
+            this.IdTxt.TextChanged += new System.EventHandler(this.IdTxt_TextChanged);
             // 
             // ID_Lbl
             // 

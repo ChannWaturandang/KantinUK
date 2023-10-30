@@ -182,6 +182,18 @@ namespace Makanan
 
         }
 
+        private void IdTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDrinks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Drinks Drinks = new Drinks();
+            Drinks.Show();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             try

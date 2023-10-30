@@ -16,7 +16,7 @@ namespace Makanan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Foods());
+            Application.Run(new Login());
         }
     }
 }
