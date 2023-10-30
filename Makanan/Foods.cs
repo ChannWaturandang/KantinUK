@@ -40,10 +40,10 @@ namespace Makanan
 
         protected void Searchbox_TextChanged(object sender, EventArgs e)
         {
-            foreach(var item in FoodDisplay.Controls)
+            foreach (var item in FoodDisplay.Controls)
             {
 
-            }   
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -79,7 +79,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("insert into food (food_id, food_name, price,customer_id) values ('{0}', '{1}', '{2}', '{3}')", IdTxt.Text, Choice, Harga, CustomerTxt.Text );
+                query = string.Format("insert into food (food_id, food_name, price,customer_id) values ('{0}', '{1}', '{2}', '{3}')", IdTxt.Text, Choice, Harga, CustomerTxt.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
@@ -109,12 +109,10 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("update food set food_name = '{0}', price = '{1}', customer_id = '{2}' where food_id='{3}'",Choice, Harga, CustomerTxt.Text, IdTxt.Text);
+                query = string.Format("update food set food_name = '{0}', price = '{1}', customer_id = '{2}' where food_id='{3}'", Choice, Harga, CustomerTxt.Text, IdTxt.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
-                ds.Clear();
-                adapter.Fill(ds);
                 int res = perintah.ExecuteNonQuery();
                 koneksi.Close();
 
@@ -154,7 +152,7 @@ namespace Makanan
 
         //Delete
         private void DeleteBtn_Click(object sender, EventArgs e)
-        {
+        {;
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
@@ -165,6 +163,7 @@ namespace Makanan
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
+
                 ds.Clear();
                 adapter.Fill(ds);
                 koneksi.Close();
@@ -176,7 +175,7 @@ namespace Makanan
                 MessageBox.Show(ex.ToString());
             }
         }
-
+            
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -192,6 +191,11 @@ namespace Makanan
             this.Hide();
             Drinks Drinks = new Drinks();
             Drinks.Show();
+        }
+
+        private void CustomerTxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

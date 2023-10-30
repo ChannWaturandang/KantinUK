@@ -303,6 +303,7 @@
             this.CustomerTxt.Name = "CustomerTxt";
             this.CustomerTxt.Size = new System.Drawing.Size(122, 20);
             this.CustomerTxt.TabIndex = 20;
+            this.CustomerTxt.TextChanged += new System.EventHandler(this.CustomerTxt_TextChanged);
             // 
             // Foods
             // 
