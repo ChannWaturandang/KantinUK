@@ -112,6 +112,7 @@
             this.label3.Size = new System.Drawing.Size(269, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "Don\'t have an account? Register one!";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // logoRegister
             // 

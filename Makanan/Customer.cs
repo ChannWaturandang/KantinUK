@@ -27,7 +27,7 @@ namespace Makanan
 
         public Customer()
         {
-            alamat = "server=localhost; database=kantin; username=root; password=;";
+            alamat = "server=localhost; database=kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
             this.Font = new Font("Times New Roman", 14, FontStyle.Regular);
 
@@ -49,17 +49,9 @@ namespace Makanan
 
                 customerGridView.DataSource = ds.Tables[0];
                 customerGridView.Columns[0].Width = 100;
-                customerGridView.Columns[0].HeaderText = "Customer ID";
-                customerGridView.Columns[1].Width = 150;
-                customerGridView.Columns[1].HeaderText = "First Name";
-                customerGridView.Columns[2].Width = 150;
-                customerGridView.Columns[2].HeaderText = "Last Name";
-                customerGridView.Columns[3].Width = 150;
-                customerGridView.Columns[3].HeaderText = "Email";
-                customerGridView.Columns[4].Width = 150;
-                customerGridView.Columns[4].HeaderText = "Phone Number";
-                customerGridView.Columns[5].Width = 100;
-                customerGridView.Columns[5].HeaderText = "Table Num";
+                customerGridView.Columns[0].HeaderText = "Username";
+                customerGridView.Columns[1].Width = 100;
+                customerGridView.Columns[1].HeaderText = "Phone Number";
 
             }
             catch (Exception ex)
@@ -85,13 +77,14 @@ namespace Makanan
 
         private void addCustomer_Click(object sender, EventArgs e)
         {
+
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
             }
             try
             {
-                query = string.Format("insert into customer (customer_id, first_name, last_name, email, phone_number, table_num) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", customerID.Text, customerFirst.Text, CustomerLast.Text, customerNum.Text, customerAddress.Text, customerTable.Text);
+                query = string.Format("insert into customer (username, phone_number) values ('{0}', '{1}')", txtUsernameCustomer.Text, txtUsernameCustomer.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
@@ -120,7 +113,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("update customer set customer_id = '{0}', first_name = '{1}', last_name = '{2}', email='{3}', phone_number='{4}', table_num='{5}' where customer_id='{0}'", customerID.Text, customerFirst.Text, CustomerLast.Text, customerNum.Text, customerAddress.Text, customerTable.Text);
+                query = string.Format("update customer set username = '{0}', phone_number = '{1}'", txtUsernameCustomer.Text, txtPhoneCustomer.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -153,7 +146,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("delete from customer where customer_id = '{0}' ", customerID.Text);
+                query = string.Format("delete from customer where username = '{0}' ", txtUsernameCustomer.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -171,12 +164,8 @@ namespace Makanan
 
         private void button2_Click(object sender, EventArgs e)
         {
-            customerID.Text = "";
-            customerFirst.Text = "";
-            CustomerLast.Text = "";
-            customerAddress.Text = "";
-            customerNum.Text = "";
-            customerTable.Text = "";
+            txtUsernameCustomer.Text = "";
+            txtPhoneCustomer.Text = "";
         }
 
         private void customerAddress_TextChanged(object sender, EventArgs e)
@@ -187,13 +176,6 @@ namespace Makanan
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnDrinks_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Drinks Drinks = new Drinks();
-            Drinks.Show();
         }
 
         private void btnFoods_Click(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace Makanan
         private string alamat, query;
         public Login()
         {
-            alamat = "server=localhost; database=kantin; username=root; password=;";
+            alamat = "server=localhost; database=kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
 
             InitializeComponent();
@@ -99,6 +99,11 @@ namespace Makanan
         }
 
         private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

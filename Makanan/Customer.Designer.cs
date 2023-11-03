@@ -34,26 +34,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
-            this.btnDrinks = new System.Windows.Forms.Button();
             this.btnFoods = new System.Windows.Forms.Button();
             this.customerGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.adminLogo = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.FirstLabel = new System.Windows.Forms.Label();
+            this.pn = new System.Windows.Forms.Label();
             this.addCustomer = new System.Windows.Forms.Button();
-            this.customerID = new System.Windows.Forms.TextBox();
-            this.customerFirst = new System.Windows.Forms.TextBox();
-            this.customerNum = new System.Windows.Forms.TextBox();
-            this.customerAddress = new System.Windows.Forms.TextBox();
+            this.txtPhoneCustomer = new System.Windows.Forms.TextBox();
             this.updateCustomer = new System.Windows.Forms.Button();
             this.deleteCustomer = new System.Windows.Forms.Button();
-            this.CustomerLast = new System.Windows.Forms.TextBox();
-            this.LastLabel = new System.Windows.Forms.Label();
-            this.customerTable = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.clearCustomer = new System.Windows.Forms.Button();
+            this.txtUsernameCustomer = new System.Windows.Forms.TextBox();
+            this.un = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +57,6 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnTables);
             this.panel1.Controls.Add(this.btnCustomer);
-            this.panel1.Controls.Add(this.btnDrinks);
             this.panel1.Controls.Add(this.btnFoods);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -136,19 +126,6 @@
             this.btnCustomer.UseVisualStyleBackColor = false;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // btnDrinks
-            // 
-            this.btnDrinks.BackColor = System.Drawing.Color.Teal;
-            this.btnDrinks.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrinks.ForeColor = System.Drawing.Color.White;
-            this.btnDrinks.Location = new System.Drawing.Point(34, 295);
-            this.btnDrinks.Name = "btnDrinks";
-            this.btnDrinks.Size = new System.Drawing.Size(187, 44);
-            this.btnDrinks.TabIndex = 1;
-            this.btnDrinks.Text = "Drinks";
-            this.btnDrinks.UseVisualStyleBackColor = false;
-            this.btnDrinks.Click += new System.EventHandler(this.btnDrinks_Click);
-            // 
             // btnFoods
             // 
             this.btnFoods.BackColor = System.Drawing.Color.Teal;
@@ -158,7 +135,7 @@
             this.btnFoods.Name = "btnFoods";
             this.btnFoods.Size = new System.Drawing.Size(187, 44);
             this.btnFoods.TabIndex = 0;
-            this.btnFoods.Text = "Foods";
+            this.btnFoods.Text = "Menu";
             this.btnFoods.UseVisualStyleBackColor = false;
             this.btnFoods.Click += new System.EventHandler(this.btnFoods_Click);
             // 
@@ -174,18 +151,6 @@
             this.customerGridView.TabIndex = 7;
             this.customerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(286, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 21);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ID";
-            // 
             // adminLogo
             // 
             this.adminLogo.AutoSize = true;
@@ -197,41 +162,17 @@
             this.adminLogo.TabIndex = 7;
             this.adminLogo.Text = "Customer";
             // 
-            // label5
+            // pn
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(662, 188);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 21);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Address";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(662, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 21);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Phone Nunber";
-            // 
-            // FirstLabel
-            // 
-            this.FirstLabel.AutoSize = true;
-            this.FirstLabel.BackColor = System.Drawing.Color.Transparent;
-            this.FirstLabel.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstLabel.ForeColor = System.Drawing.Color.Black;
-            this.FirstLabel.Location = new System.Drawing.Point(286, 192);
-            this.FirstLabel.Name = "FirstLabel";
-            this.FirstLabel.Size = new System.Drawing.Size(105, 21);
-            this.FirstLabel.TabIndex = 13;
-            this.FirstLabel.Text = "First Name";
+            this.pn.AutoSize = true;
+            this.pn.BackColor = System.Drawing.Color.Transparent;
+            this.pn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pn.ForeColor = System.Drawing.Color.Black;
+            this.pn.Location = new System.Drawing.Point(281, 186);
+            this.pn.Name = "pn";
+            this.pn.Size = new System.Drawing.Size(142, 21);
+            this.pn.TabIndex = 12;
+            this.pn.Text = "Phone Number";
             // 
             // addCustomer
             // 
@@ -244,39 +185,13 @@
             this.addCustomer.UseVisualStyleBackColor = true;
             this.addCustomer.Click += new System.EventHandler(this.addCustomer_Click);
             // 
-            // customerID
+            // txtPhoneCustomer
             // 
-            this.customerID.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerID.Location = new System.Drawing.Point(463, 143);
-            this.customerID.Name = "customerID";
-            this.customerID.Size = new System.Drawing.Size(148, 30);
-            this.customerID.TabIndex = 17;
-            this.customerID.TextChanged += new System.EventHandler(this.customerID_TextChanged);
-            // 
-            // customerFirst
-            // 
-            this.customerFirst.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerFirst.Location = new System.Drawing.Point(463, 187);
-            this.customerFirst.Name = "customerFirst";
-            this.customerFirst.Size = new System.Drawing.Size(148, 30);
-            this.customerFirst.TabIndex = 18;
-            // 
-            // customerNum
-            // 
-            this.customerNum.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNum.Location = new System.Drawing.Point(839, 143);
-            this.customerNum.Name = "customerNum";
-            this.customerNum.Size = new System.Drawing.Size(148, 30);
-            this.customerNum.TabIndex = 19;
-            // 
-            // customerAddress
-            // 
-            this.customerAddress.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerAddress.Location = new System.Drawing.Point(839, 185);
-            this.customerAddress.Name = "customerAddress";
-            this.customerAddress.Size = new System.Drawing.Size(148, 30);
-            this.customerAddress.TabIndex = 20;
-            this.customerAddress.TextChanged += new System.EventHandler(this.customerAddress_TextChanged);
+            this.txtPhoneCustomer.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneCustomer.Location = new System.Drawing.Point(458, 179);
+            this.txtPhoneCustomer.Name = "txtPhoneCustomer";
+            this.txtPhoneCustomer.Size = new System.Drawing.Size(148, 30);
+            this.txtPhoneCustomer.TabIndex = 19;
             // 
             // updateCustomer
             // 
@@ -300,64 +215,6 @@
             this.deleteCustomer.UseVisualStyleBackColor = true;
             this.deleteCustomer.Click += new System.EventHandler(this.deleteCustomer_Click);
             // 
-            // CustomerLast
-            // 
-            this.CustomerLast.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerLast.Location = new System.Drawing.Point(463, 231);
-            this.CustomerLast.Name = "CustomerLast";
-            this.CustomerLast.Size = new System.Drawing.Size(148, 30);
-            this.CustomerLast.TabIndex = 24;
-            // 
-            // LastLabel
-            // 
-            this.LastLabel.AutoSize = true;
-            this.LastLabel.BackColor = System.Drawing.Color.Transparent;
-            this.LastLabel.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastLabel.ForeColor = System.Drawing.Color.Black;
-            this.LastLabel.Location = new System.Drawing.Point(286, 236);
-            this.LastLabel.Name = "LastLabel";
-            this.LastLabel.Size = new System.Drawing.Size(101, 21);
-            this.LastLabel.TabIndex = 23;
-            this.LastLabel.Text = "Last Name";
-            // 
-            // customerTable
-            // 
-            this.customerTable.ForeColor = System.Drawing.Color.Black;
-            this.customerTable.FormattingEnabled = true;
-            this.customerTable.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"});
-            this.customerTable.Location = new System.Drawing.Point(839, 230);
-            this.customerTable.Name = "customerTable";
-            this.customerTable.Size = new System.Drawing.Size(148, 21);
-            this.customerTable.TabIndex = 25;
-            this.customerTable.Text = "--Choose Table Number--";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(662, 230);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 21);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Table";
-            // 
             // clearCustomer
             // 
             this.clearCustomer.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -369,28 +226,40 @@
             this.clearCustomer.UseVisualStyleBackColor = true;
             this.clearCustomer.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtUsernameCustomer
+            // 
+            this.txtUsernameCustomer.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsernameCustomer.Location = new System.Drawing.Point(458, 143);
+            this.txtUsernameCustomer.Name = "txtUsernameCustomer";
+            this.txtUsernameCustomer.Size = new System.Drawing.Size(148, 30);
+            this.txtUsernameCustomer.TabIndex = 29;
+            // 
+            // un
+            // 
+            this.un.AutoSize = true;
+            this.un.BackColor = System.Drawing.Color.Transparent;
+            this.un.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.un.ForeColor = System.Drawing.Color.Black;
+            this.un.Location = new System.Drawing.Point(281, 150);
+            this.un.Name = "un";
+            this.un.Size = new System.Drawing.Size(99, 21);
+            this.un.TabIndex = 28;
+            this.un.Text = "Username";
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 594);
+            this.Controls.Add(this.txtUsernameCustomer);
+            this.Controls.Add(this.un);
             this.Controls.Add(this.clearCustomer);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.customerTable);
-            this.Controls.Add(this.CustomerLast);
-            this.Controls.Add(this.LastLabel);
             this.Controls.Add(this.deleteCustomer);
             this.Controls.Add(this.updateCustomer);
-            this.Controls.Add(this.customerAddress);
-            this.Controls.Add(this.customerNum);
-            this.Controls.Add(this.customerFirst);
-            this.Controls.Add(this.customerID);
+            this.Controls.Add(this.txtPhoneCustomer);
             this.Controls.Add(this.addCustomer);
-            this.Controls.Add(this.FirstLabel);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pn);
             this.Controls.Add(this.adminLogo);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.customerGridView);
             this.Controls.Add(this.panel1);
             this.Name = "Customer";
@@ -415,25 +284,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTables;
         private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.Button btnDrinks;
         private System.Windows.Forms.Button btnFoods;
         private System.Windows.Forms.DataGridView customerGridView;
         private System.Windows.Forms.Label adminLogo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label FirstLabel;
+        private System.Windows.Forms.Label pn;
         private System.Windows.Forms.Button addCustomer;
-        private System.Windows.Forms.TextBox customerID;
-        private System.Windows.Forms.TextBox customerFirst;
-        private System.Windows.Forms.TextBox customerNum;
-        private System.Windows.Forms.TextBox customerAddress;
+        private System.Windows.Forms.TextBox txtPhoneCustomer;
         private System.Windows.Forms.Button updateCustomer;
         private System.Windows.Forms.Button deleteCustomer;
-        private System.Windows.Forms.TextBox CustomerLast;
-        private System.Windows.Forms.Label LastLabel;
-        private System.Windows.Forms.ComboBox customerTable;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button clearCustomer;
+        private System.Windows.Forms.TextBox txtUsernameCustomer;
+        private System.Windows.Forms.Label un;
     }
 }

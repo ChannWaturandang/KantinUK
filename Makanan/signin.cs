@@ -23,7 +23,7 @@ namespace Makanan
         private string alamat, query;
         public signin()
         {
-            alamat = "server=localhost; database=kantin; username=root; password=;";
+            alamat = "server=localhost; database=kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
 
             InitializeComponent();
@@ -69,6 +69,7 @@ namespace Makanan
                         signin signin = new signin();
                         signin.Show();
                         this.Hide();
+
                     }
                     else
                     {

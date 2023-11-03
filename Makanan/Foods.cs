@@ -25,12 +25,13 @@ namespace Makanan
         private DataSet ds = new DataSet();
         private string alamat, query;
 
-        string Choice;
-        float Harga;
+        string choiceDrink, choiceFood;
+        float foodP;
+        float drinkP;
 
         public Foods()
         {
-            alamat = "server=localhost; database=Kantin; username=root; password=;";
+            alamat = "server=localhost; database=Kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
             this.Font = new Font("Times New Roman", 14, FontStyle.Regular);
 
@@ -56,10 +57,19 @@ namespace Makanan
 
         }
 
-        public void PicRefresh()
+        public void PicRefreshFood()
         {
-            this.NoodlePic.BackColor = Color.Transparent;
-            this.BurgerPic.BackColor = Color.Transparent;
+            this.mieCakalang.BackColor = Color.Transparent;
+            this.nasiGoreng.BackColor = Color.Transparent;
+            this.ayamGeprek.BackColor = Color.Transparent;
+            this.mieKuah.BackColor = Color.Transparent;
+            this.ayamLalapan.BackColor = Color.Transparent;
+        }
+
+        public void PicRefreshDrink()
+        {
+            this.airMineral.BackColor = Color.Transparent;
+            this.nutrisari.BackColor = Color.Transparent;
         }
 
         //Form Customer
@@ -79,7 +89,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("insert into food (food_id, food_name, price,customer_id) values ('{0}', '{1}', '{2}', '{3}')", IdTxt.Text, Choice, Harga, CustomerTxt.Text);
+                query = string.Format("insert into menu (username, food, foodPrice, drink, drinkPrice) values ('{0}', '{1}', '{2}', '{3}', '{4}')", CustomerTxt.Text, choiceFood, foodP, choiceDrink, drinkP);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
@@ -109,7 +119,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("update food set food_name = '{0}', price = '{1}', customer_id = '{2}' where food_id='{3}'", Choice, Harga, CustomerTxt.Text, IdTxt.Text);
+                query = string.Format("update menu set username = '{0}', food = '{1}', foodPrice = '{2}', drink = '{3}' , drinkPrice = '{4}' where username='{0}'", CustomerTxt.Text, choiceFood, foodP, choiceDrink, drinkP);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -132,24 +142,6 @@ namespace Makanan
             }
         }
 
-        //Burger
-        private void BurgerPic_Click(object sender, EventArgs e)
-        {
-            PicRefresh();
-            this.BurgerPic.BackColor = Color.LightGray;
-            Choice = "Burger";
-            Harga = 15000;
-        }
-
-        //Noodles
-        private void NoodlePic_Click(object sender, EventArgs e)
-        {
-            PicRefresh();
-            this.NoodlePic.BackColor = Color.LightGray;
-            Choice = "Noodle";
-            Harga = 12000;
-        }
-
         //Delete
         private void DeleteBtn_Click(object sender, EventArgs e)
         {;
@@ -159,16 +151,27 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("delete from food where food_id={0}", IdTxt.Text);
+                query = string.Format("delete from menu where username='{0}'", CustomerTxt.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
-                perintah.ExecuteNonQuery();
+                int res = perintah.ExecuteNonQuery();
 
-                ds.Clear();
-                adapter.Fill(ds);
-                koneksi.Close();
+                
 
-                Form1_Load(null, null);
+
+                if (res == 1)
+                {
+                    ds.Clear();
+                    adapter.Fill(ds);
+                    koneksi.Close();
+
+                    Form1_Load(null, null);
+                    MessageBox.Show("Insert data success");
+                }
+                else
+                {
+                    MessageBox.Show("Customer ID doesn't exist, please check the customer table");
+                }
             }
             catch (Exception ex)
             {
@@ -181,29 +184,84 @@ namespace Makanan
 
         }
 
-        private void IdTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDrinks_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Drinks Drinks = new Drinks();
-            Drinks.Show();
-        }
 
         private void CustomerTxt_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        //Foods
+        //ayam lalapan
+        private void ayamLalapan_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+            this.ayamLalapan.BackColor = Color.LightGray;
+            choiceFood = "Ayam Lalapan";
+            foodP = 18000;
+        }
+
+        //Nasi Goreng
+        private void nasiGoreng_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+            this.nasiGoreng.BackColor = Color.LightGray;
+            choiceFood = "Nasi Goreng";
+            foodP = 15000;
+        }
+
+        //Ayam Geprek
+        private void ayamGeprek_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+            this.ayamGeprek.BackColor = Color.LightGray;
+            choiceFood = "Ayam Geprek";
+            foodP = 18000;
+        }
+
+        //Mie kuah
+        private void mieKuah_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+            this.mieKuah.BackColor = Color.LightGray;
+            choiceFood = "Mie kuah";
+            foodP = 10000;
+        }
+
+        //Mie Cakalang
+        private void NoodlePic_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+            this.mieCakalang.BackColor = Color.LightGray;
+            choiceFood = "Mie Cakalang";
+            foodP = 12000;
+        }
+        
+        //Drinks
+        //air mineral
+        private void airMineral_Click(object sender, EventArgs e)
+        {
+            PicRefreshDrink();
+            this.airMineral.BackColor = Color.LightGray;
+            choiceDrink = "Air Mineral";
+            drinkP = 5000;
+        }
+
+        //Nutri Sari
+        private void nutrisari_Click(object sender, EventArgs e)
+        {
+            PicRefreshDrink();
+            this.nutrisari.BackColor = Color.LightGray;
+            choiceDrink = "Nutri Sari";
+            drinkP = 7000;
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
                 koneksi.Open();
-                query = string.Format("Select * from food");
+                query = string.Format("Select * from menu");
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -211,36 +269,17 @@ namespace Makanan
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                // Mengatur gaya sel untuk sel-sel dalam DataGridView
-                dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Teks di tengah
-                dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True; // Untuk wrap teks dalam sel
-                dataGridView1.DefaultCellStyle.Font = new Font("Times New Roman", 14, FontStyle.Regular);
-
-                // Mengatur warna latar belakang baris genap dan ganjil
-                dataGridView1.RowsDefaultCellStyle.BackColor = Color.LightGray; // Baris genap
-                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White; // Baris ganjil
-
-                // Mengatur warna header kolom
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-                // Mengatur lebar kolom otomatis sesuai dengan konten
-                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-                // Atur tinggi baris agar terlihat lebih rapi
-                dataGridView1.RowTemplate.Height = 30;
-
-
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].Width = 100;
-                dataGridView1.Columns[0].HeaderText = "Food ID";
+                dataGridView1.Columns[0].HeaderText = "Customer name";
                 dataGridView1.Columns[1].Width = 100;
-                dataGridView1.Columns[1].HeaderText = "Food Name";
+                dataGridView1.Columns[1].HeaderText = "Food";
                 dataGridView1.Columns[2].Width = 100;
-                dataGridView1.Columns[2].HeaderText = "Price";
-                dataGridView1.Columns[2].Width = 100;
-                dataGridView1.Columns[2].HeaderText = "customer ID";
-
+                dataGridView1.Columns[2].HeaderText = "Drink";
+                dataGridView1.Columns[3].Width = 100;
+                dataGridView1.Columns[3].HeaderText = "Food Price";
+                dataGridView1.Columns[4].Width = 100;
+                dataGridView1.Columns[4].HeaderText = "Drink Price";
             }
             catch (Exception ex)
             {
