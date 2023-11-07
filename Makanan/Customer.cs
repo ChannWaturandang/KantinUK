@@ -294,6 +294,13 @@ namespace Makanan
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            order order = new order();
+            order.Show();
+        }
+
         public void refresh_Click()
         {
             this.deleteCustomer.ForeColor = Color.Red;

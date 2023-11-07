@@ -88,6 +88,12 @@ namespace Makanan
         {
 
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            order order = new order();
+            order.Show();
+        }
 
         //Update (Add)
         private void UpdateBtn_Click(object sender, EventArgs e)

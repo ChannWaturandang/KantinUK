@@ -227,6 +227,13 @@ namespace Makanan
             Customer.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            order order = new order();
+            order.Show();
+        }
+
         private void confirmButton_Click(object sender, EventArgs e)
         {
             input(n);
