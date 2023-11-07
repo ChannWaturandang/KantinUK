@@ -48,10 +48,12 @@ namespace Makanan
                 koneksi.Close();
 
                 customerGridView.DataSource = ds.Tables[0];
-                customerGridView.Columns[0].Width = 100;
-                customerGridView.Columns[0].HeaderText = "Username";
-                customerGridView.Columns[1].Width = 100;
-                customerGridView.Columns[1].HeaderText = "Phone Number";
+                customerGridView.Columns[0].Width = 25;
+                customerGridView.Columns[0].HeaderText = "ID";
+                customerGridView.Columns[1].Width = 75;
+                customerGridView.Columns[1].HeaderText = "Username";
+                customerGridView.Columns[2].Width = 75;
+                customerGridView.Columns[2].HeaderText = "Phone Number";
 
             }
             catch (Exception ex)
@@ -67,7 +69,23 @@ namespace Makanan
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("");
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
 
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void customerID_TextChanged(object sender, EventArgs e)
@@ -84,7 +102,28 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("insert into customer (username, phone_number) values ('{0}', '{1}')", txtUsernameCustomer.Text, txtUsernameCustomer.Text);
+                query = string.Format("insert into customer (id, username, phone_number) values ('{0}','{1}', '{2}')", txtID.Text, txtUsernameCustomer.Text, txtPhoneCustomer.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                int res = perintah.ExecuteNonQuery();
+                koneksi.Close();
+                if (res == 1)
+                {
+                    Customer_Load(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("insert into menu (id, username) values ('{0}', '{1}')", txtID.Text, txtUsernameCustomer.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
@@ -113,7 +152,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("update customer set username = '{0}', phone_number = '{1}'", txtUsernameCustomer.Text, txtPhoneCustomer.Text);
+                query = string.Format("update customer set username='{0}', phone_number='{1}' where id='{2}'", txtUsernameCustomer.Text, txtPhoneCustomer.Text, txtID.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -121,15 +160,10 @@ namespace Makanan
                 adapter.Fill(ds);
                 int res = perintah.ExecuteNonQuery();
                 koneksi.Close();
-
                 if (res == 1)
                 {
-                    MessageBox.Show("Insert data success");
+                    MessageBox.Show("Insert data berhasil");
                     Customer_Load(null, null);
-                }
-                else
-                {
-                    MessageBox.Show("Insert data failed!");
                 }
             }
             catch (Exception ex)
@@ -146,7 +180,28 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("delete from customer where username = '{0}' ", txtUsernameCustomer.Text);
+                query = string.Format("delete from customer where id = '{0}' ", txtID.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
+                ds.Clear();
+                adapter.Fill(ds);
+                koneksi.Close();
+
+                Customer_Load(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("delete from menu where id = '{0}' ", txtID.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -166,6 +221,48 @@ namespace Makanan
         {
             txtUsernameCustomer.Text = "";
             txtPhoneCustomer.Text = "";
+
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("delete from customer", txtUsernameCustomer.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
+                ds.Clear();
+                adapter.Fill(ds);
+                koneksi.Close();
+
+                Customer_Load(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("delete from menu", txtUsernameCustomer.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
+                ds.Clear();
+                adapter.Fill(ds);
+                koneksi.Close();
+
+                Customer_Load(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void customerAddress_TextChanged(object sender, EventArgs e)
@@ -183,6 +280,23 @@ namespace Makanan
             this.Hide();
             Foods Foods = new Foods();
             Foods.Show();
+        }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            table table = new table();
+            table.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void refresh_Click()
+        {
+            this.deleteCustomer.ForeColor = Color.Red;
         }
     }
 };
