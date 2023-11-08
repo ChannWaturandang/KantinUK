@@ -109,6 +109,7 @@
             this.btnTables.TabIndex = 3;
             this.btnTables.Text = "Tables";
             this.btnTables.UseVisualStyleBackColor = false;
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnCustomer
             // 

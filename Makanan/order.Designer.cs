@@ -94,6 +94,7 @@
             this.btnTables.TabIndex = 3;
             this.btnTables.Text = "Tables";
             this.btnTables.UseVisualStyleBackColor = false;
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnCustomer
             // 
@@ -106,6 +107,7 @@
             this.btnCustomer.TabIndex = 2;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.UseVisualStyleBackColor = false;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnFoods
             // 
@@ -118,6 +120,7 @@
             this.btnFoods.TabIndex = 0;
             this.btnFoods.Text = "Foods";
             this.btnFoods.UseVisualStyleBackColor = false;
+            this.btnFoods.Click += new System.EventHandler(this.btnFoods_Click);
             // 
             // dataGridView1
             // 

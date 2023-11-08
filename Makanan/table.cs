@@ -234,6 +234,11 @@ namespace Makanan
             order.Show();
         }
 
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void confirmButton_Click(object sender, EventArgs e)
         {
             input(n);

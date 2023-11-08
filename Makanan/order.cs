@@ -239,6 +239,27 @@ namespace Makanan
             }
         }
 
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Customer Customer = new Customer();
+            Customer.Show();
+        }
+
+        private void btnFoods_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Foods Foods = new Foods();
+            Foods.Show();
+        }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            table table = new table();
+            table.Show();
+        }
+
         private void Total()
         {
             sum = Prices.Sum();
