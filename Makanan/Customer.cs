@@ -95,11 +95,23 @@ namespace Makanan
 
         private void addCustomer_Click(object sender, EventArgs e)
         {
-
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
             }
+
+            // Check if the ID already exists
+            query = string.Format("SELECT COUNT(*) FROM customer WHERE id = '{0}'", txtID.Text);
+            perintah = new MySqlCommand(query, koneksi);
+            int existingIDCount = Convert.ToInt32(perintah.ExecuteScalar());
+
+            if (existingIDCount > 0)
+            {
+                MessageBox.Show("ID already exists.");
+                koneksi.Close();
+                return;
+            }
+
             try
             {
                 query = string.Format("insert into customer (id, username, phone_number) values ('{0}','{1}', '{2}')", txtID.Text, txtUsernameCustomer.Text, txtPhoneCustomer.Text);
@@ -121,6 +133,7 @@ namespace Makanan
             {
                 koneksi.Open();
             }
+
             try
             {
                 query = string.Format("insert into menu (id, username) values ('{0}', '{1}')", txtID.Text, txtUsernameCustomer.Text);
@@ -143,6 +156,7 @@ namespace Makanan
                 MessageBox.Show(ex.ToString());
             }
         }
+
 
         private void updateCustomer_Click(object sender, EventArgs e)
         {

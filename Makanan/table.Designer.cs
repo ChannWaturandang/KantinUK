@@ -129,7 +129,7 @@
             this.btnFoods.BackColor = System.Drawing.Color.Teal;
             this.btnFoods.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFoods.ForeColor = System.Drawing.Color.White;
-            this.btnFoods.Location = new System.Drawing.Point(34, 230);
+            this.btnFoods.Location = new System.Drawing.Point(34, 228);
             this.btnFoods.Name = "btnFoods";
             this.btnFoods.Size = new System.Drawing.Size(187, 44);
             this.btnFoods.TabIndex = 0;

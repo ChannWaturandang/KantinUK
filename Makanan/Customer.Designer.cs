@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnFoods = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customerGridView = new System.Windows.Forms.DataGridView();
             this.adminLogo = new System.Windows.Forms.Label();
             this.pn = new System.Windows.Forms.Label();
@@ -49,7 +47,6 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +58,6 @@
             this.panel1.Controls.Add(this.btnTables);
             this.panel1.Controls.Add(this.btnCustomer);
             this.panel1.Controls.Add(this.btnFoods);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -132,16 +128,6 @@
             this.btnFoods.UseVisualStyleBackColor = false;
             this.btnFoods.Click += new System.EventHandler(this.btnFoods_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-28, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(307, 592);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // customerGridView
             // 
             this.customerGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -150,7 +136,7 @@
             this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerGridView.Location = new System.Drawing.Point(285, 230);
             this.customerGridView.Name = "customerGridView";
-            this.customerGridView.Size = new System.Drawing.Size(395, 330);
+            this.customerGridView.Size = new System.Drawing.Size(815, 330);
             this.customerGridView.TabIndex = 7;
             this.customerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -297,7 +283,6 @@
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,7 +307,6 @@
         private System.Windows.Forms.Button clearCustomer;
         private System.Windows.Forms.TextBox txtUsernameCustomer;
         private System.Windows.Forms.Label un;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
     }
