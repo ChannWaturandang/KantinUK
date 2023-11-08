@@ -76,19 +76,21 @@ namespace Makanan
             getCusName();   //Get Customer's Name
             getCusOrder();  //Get Customer's  Order
             Inserting();    //Insert into table, data : Items and Price of Orders
-            Total();
+            Total();        //Sum
         }
 
         //Clear Table
         private void Reset()
         {
+            Prices.Clear();
+            Items.Clear();
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
             }
             try
             {
-                query = string.Format("delete from Checkout");
+                query = string.Format("delete from checkout");
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
@@ -181,8 +183,8 @@ namespace Makanan
 
         private void splitting()
         {
-            //patern Regex untuk mengambil sebelum "Rp."
-            string itemPattern = @"([^Rp.+]+)(?=\s*Rp\.)";
+            //patern Regex untuk mengambil sebelum "."
+            string itemPattern = @"([^.+]+)(?=\s*Rp\.)";
 
             //pattern Regex untuk mengambil hanya angka rupiah dalam Order
             string pricePattern = @"Rp\.(\d+)";
@@ -239,6 +241,12 @@ namespace Makanan
             }
         }
 
+        private void Total()
+        {
+            sum = Prices.Sum();
+            TotalPrice.Text = "Rp." + sum; 
+        }
+
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -258,12 +266,6 @@ namespace Makanan
             this.Hide();
             table table = new table();
             table.Show();
-        }
-
-        private void Total()
-        {
-            sum = Prices.Sum();
-            TotalPrice.Text = "Rp." + sum; 
         }
     }
 }

@@ -228,7 +228,7 @@ namespace Makanan
             }
             try
             {
-                query = string.Format("delete from customer", txtUsernameCustomer.Text);
+                query = string.Format("delete from customer");
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
