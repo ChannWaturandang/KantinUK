@@ -40,6 +40,8 @@ namespace Makanan
         {
             displayName.Text = "";
             TotalPrice.Text = "Rp. -";
+            txtPayment.Text = "Rp. -";
+            txtReturn.Text = "-";
 
             loadGrid();
             Reset();
@@ -84,6 +86,10 @@ namespace Makanan
         {
             Prices.Clear();
             Items.Clear();
+            TotalPrice.Text = "Rp. -";
+            txtPayment.Text = "Rp. -";
+            txtReturn.Text = "-";
+            paymentBox.Text = "";
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
@@ -245,6 +251,16 @@ namespace Makanan
         {
             sum = Prices.Sum();
             TotalPrice.Text = "Rp." + sum; 
+        }
+
+        private void paymentButton_Click(object sender, EventArgs e)
+        {
+
+            int payment = Convert.ToInt32(paymentBox.Text);
+            txtPayment.Text = "Rp." + paymentBox.Text;
+
+            int payReturn = payment - sum;
+            txtReturn.Text = "Rp." + payReturn.ToString();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
