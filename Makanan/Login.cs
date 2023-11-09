@@ -94,7 +94,7 @@ namespace Makanan
         private void txtRegis_Click(object sender, EventArgs e)
         {
             this.Hide();
-            signin sg = new signin();
+            signup sg = new signup();
             sg.Show();
         }
 

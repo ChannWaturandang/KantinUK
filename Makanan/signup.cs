@@ -14,14 +14,14 @@ using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace Makanan
 {
-    public partial class signin : Form
+    public partial class signup : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
         private MySqlCommand perintah;
 
         private string alamat, query;
-        public signin()
+        public signup()
         {
             alamat = "server=localhost; database=kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
@@ -34,10 +34,6 @@ namespace Makanan
 
         }
 
-        private void textBox5_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void sBack_Click(object sender, EventArgs e)
         {
@@ -46,9 +42,23 @@ namespace Makanan
             this.Hide();
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                sPass.UseSystemPasswordChar = false;
+                sConfirm.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                sPass.UseSystemPasswordChar = true;
+                sConfirm.UseSystemPasswordChar = true;
+            }
+        }
+
         private void sSignIn_Click(object sender, EventArgs e)
         {
-            if(sConfirm.Text == sPass.Text)
+            if (sConfirm.Text == sPass.Text)
             {
                 if (koneksi.State != ConnectionState.Open)
                 {
@@ -66,7 +76,7 @@ namespace Makanan
                         MessageBox.Show("Insert data berhasil");
                         signin_Load(null, null);
 
-                        signin signin = new signin();
+                        signup signin = new signup();
                         signin.Show();
                         this.Hide();
 
@@ -85,7 +95,7 @@ namespace Makanan
             {
                 MessageBox.Show("Please confirm your Password");
             }
-            
+
         }
     }
 }
