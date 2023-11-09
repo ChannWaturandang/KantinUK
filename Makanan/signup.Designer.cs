@@ -274,6 +274,7 @@
             this.sBack.TabIndex = 45;
             this.sBack.Text = "Back";
             this.sBack.UseVisualStyleBackColor = true;
+            this.sBack.Click += new System.EventHandler(this.sBack_Click_1);
             // 
             // sSignIn
             // 
@@ -285,7 +286,7 @@
             this.sSignIn.UseVisualStyleBackColor = true;
             this.sSignIn.Click += new System.EventHandler(this.sSignIn_Click);
             // 
-            // signin
+            // signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,7 +315,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sBack);
             this.Controls.Add(this.sSignIn);
-            this.Name = "signin";
+            this.Name = "signup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signin";
             this.Load += new System.EventHandler(this.signin_Load);
             this.ResumeLayout(false);

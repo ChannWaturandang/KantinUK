@@ -56,6 +56,13 @@ namespace Makanan
             }
         }
 
+        private void sBack_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Login Login = new Login();
+            Login.Show();
+        }
+
         private void sSignIn_Click(object sender, EventArgs e)
         {
             if (sConfirm.Text == sPass.Text)
