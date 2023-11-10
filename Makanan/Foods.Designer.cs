@@ -51,7 +51,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.DrinkDisplay = new System.Windows.Forms.FlowLayoutPanel();
             this.airMineral = new System.Windows.Forms.PictureBox();
             this.nutrisari = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.DrinkDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.airMineral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nutrisari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -352,20 +352,20 @@
             this.dataGridView1.TabStop = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // flowLayoutPanel1
+            // DrinkDisplay
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.airMineral);
-            this.flowLayoutPanel1.Controls.Add(this.nutrisari);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox11);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox10);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox9);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox8);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(701, 295);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(399, 283);
-            this.flowLayoutPanel1.TabIndex = 21;
+            this.DrinkDisplay.AutoScroll = true;
+            this.DrinkDisplay.Controls.Add(this.airMineral);
+            this.DrinkDisplay.Controls.Add(this.nutrisari);
+            this.DrinkDisplay.Controls.Add(this.pictureBox1);
+            this.DrinkDisplay.Controls.Add(this.pictureBox11);
+            this.DrinkDisplay.Controls.Add(this.pictureBox10);
+            this.DrinkDisplay.Controls.Add(this.pictureBox9);
+            this.DrinkDisplay.Controls.Add(this.pictureBox8);
+            this.DrinkDisplay.Location = new System.Drawing.Point(701, 295);
+            this.DrinkDisplay.Name = "DrinkDisplay";
+            this.DrinkDisplay.Size = new System.Drawing.Size(399, 283);
+            this.DrinkDisplay.TabIndex = 21;
             // 
             // airMineral
             // 
@@ -505,7 +505,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Searchbox);
             this.Controls.Add(this.CustomerTxt);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.DrinkDisplay);
             this.Controls.Add(this.FoodDisplay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Customer_Lbl);
@@ -529,7 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.DrinkDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.airMineral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nutrisari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -562,7 +562,7 @@
         private System.Windows.Forms.PictureBox ayamLalapan;
         private System.Windows.Forms.PictureBox ayamGeprek;
         private System.Windows.Forms.PictureBox mieKuah;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel DrinkDisplay;
         private System.Windows.Forms.PictureBox airMineral;
         private System.Windows.Forms.PictureBox nutrisari;
         private System.Windows.Forms.PictureBox pictureBox7;

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -39,12 +40,43 @@ namespace Makanan
             InitializeComponent();
         }
 
+        private void linearsearch(List<string> Arr, string keyword , int size, int index)
+        {
+            index += 1;
+
+            if(size == 0)
+            {
+                this.Refresh();
+            }
+        }
 
         protected void Searchbox_TextChanged(object sender, EventArgs e)
         {
-            foreach (var item in FoodDisplay.Controls)
+            PicRefreshFood();
+            foreach(PictureBox item in FoodDisplay.Controls)
             {
+                string search = Searchbox.Text.Replace(" ","");
+                string itemName = Convert.ToString(TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToLower();
 
+                bool found = itemName.Contains(search);
+                
+                if(found == false)
+                {
+                    item.Hide();
+                }
+            }
+
+            foreach (PictureBox item in DrinkDisplay.Controls)
+            {
+                string search = Searchbox.Text.Replace(" ", "");
+                string itemName = Convert.ToString(TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToLower();
+
+                bool found = itemName.Contains(search);
+
+                if (found == false)
+                {
+                    item.Hide();
+                }
             }
         }
 
@@ -60,6 +92,14 @@ namespace Makanan
 
         public void PicRefreshFood()
         {
+            this.mieCakalang.Show();
+            this.nasiGoreng.Show();
+            this.ayamGeprek.Show();
+            this.mieKuah.Show();
+            this.ayamLalapan.Show();
+            this.nutrisari.Show();
+            this.airMineral.Show();
+
             this.mieCakalang.BackColor = Color.Transparent;
             this.nasiGoreng.BackColor = Color.Transparent;
             this.ayamGeprek.BackColor = Color.Transparent;
