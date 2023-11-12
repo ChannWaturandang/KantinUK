@@ -42,44 +42,63 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            this.mieCakalang = new System.Windows.Forms.PictureBox();
+            this.idMieCakalang = new System.Windows.Forms.PictureBox();
             this.FoodDisplay = new System.Windows.Forms.FlowLayoutPanel();
-            this.nasiGoreng = new System.Windows.Forms.PictureBox();
-            this.ayamGeprek = new System.Windows.Forms.PictureBox();
-            this.ayamLalapan = new System.Windows.Forms.PictureBox();
-            this.mieKuah = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.mieCakalang = new System.Windows.Forms.GroupBox();
+            this.miecakalangNum = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ayamGeprek = new System.Windows.Forms.GroupBox();
+            this.ayamgeprekNum = new System.Windows.Forms.NumericUpDown();
+            this.idAyamGeprek = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nasiGoreng = new System.Windows.Forms.GroupBox();
+            this.nasigorengNum = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.idNasiGoreng = new System.Windows.Forms.PictureBox();
+            this.mieKuah = new System.Windows.Forms.GroupBox();
+            this.miekuahNum = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.idMieKuah = new System.Windows.Forms.PictureBox();
+            this.ayamLalapan = new System.Windows.Forms.GroupBox();
+            this.ayamlalapanNum = new System.Windows.Forms.NumericUpDown();
+            this.idAyamLalapan = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DrinkDisplay = new System.Windows.Forms.FlowLayoutPanel();
-            this.airMineral = new System.Windows.Forms.PictureBox();
-            this.nutrisari = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.airMineral = new System.Windows.Forms.GroupBox();
+            this.idAirMineral = new System.Windows.Forms.PictureBox();
+            this.airNum = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nutrisari = new System.Windows.Forms.GroupBox();
+            this.idNutrisari = new System.Windows.Forms.PictureBox();
+            this.nutriNum = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.ResetBtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mieCakalang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idMieCakalang)).BeginInit();
             this.FoodDisplay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nasiGoreng)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayamGeprek)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayamLalapan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mieKuah)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.mieCakalang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miecakalangNum)).BeginInit();
+            this.ayamGeprek.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ayamgeprekNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idAyamGeprek)).BeginInit();
+            this.nasiGoreng.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nasigorengNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idNasiGoreng)).BeginInit();
+            this.mieKuah.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miekuahNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idMieKuah)).BeginInit();
+            this.ayamLalapan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ayamlalapanNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idAyamLalapan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.DrinkDisplay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airMineral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nutrisari)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.airMineral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idAirMineral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airNum)).BeginInit();
+            this.nutrisari.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idNutrisari)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nutriNum)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,9 +112,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 594);
+            this.panel1.Size = new System.Drawing.Size(255, 647);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
@@ -163,36 +181,39 @@
             // Searchlabel
             // 
             this.Searchlabel.AutoSize = true;
-            this.Searchlabel.Location = new System.Drawing.Point(276, 213);
+            this.Searchlabel.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searchlabel.Location = new System.Drawing.Point(725, 73);
             this.Searchlabel.Name = "Searchlabel";
-            this.Searchlabel.Size = new System.Drawing.Size(47, 13);
+            this.Searchlabel.Size = new System.Drawing.Size(56, 17);
             this.Searchlabel.TabIndex = 17;
-            this.Searchlabel.Text = "Search :";
+            this.Searchlabel.Text = "Search";
             // 
             // Searchbox
             // 
-            this.Searchbox.Location = new System.Drawing.Point(279, 229);
+            this.Searchbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searchbox.Location = new System.Drawing.Point(519, 69);
             this.Searchbox.Name = "Searchbox";
-            this.Searchbox.Size = new System.Drawing.Size(100, 20);
+            this.Searchbox.Size = new System.Drawing.Size(200, 24);
             this.Searchbox.TabIndex = 16;
             this.Searchbox.TextChanged += new System.EventHandler(this.Searchbox_TextChanged);
             // 
             // CustomerTxt
             // 
-            this.CustomerTxt.Location = new System.Drawing.Point(278, 87);
+            this.CustomerTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerTxt.Location = new System.Drawing.Point(807, 191);
             this.CustomerTxt.Name = "CustomerTxt";
-            this.CustomerTxt.Size = new System.Drawing.Size(122, 20);
+            this.CustomerTxt.Size = new System.Drawing.Size(199, 24);
             this.CustomerTxt.TabIndex = 20;
-            this.CustomerTxt.TextChanged += new System.EventHandler(this.CustomerTxt_TextChanged);
             // 
             // Customer_Lbl
             // 
             this.Customer_Lbl.AutoSize = true;
-            this.Customer_Lbl.Location = new System.Drawing.Point(276, 70);
+            this.Customer_Lbl.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customer_Lbl.Location = new System.Drawing.Point(932, 165);
             this.Customer_Lbl.Name = "Customer_Lbl";
-            this.Customer_Lbl.Size = new System.Drawing.Size(88, 13);
+            this.Customer_Lbl.Size = new System.Drawing.Size(122, 17);
             this.Customer_Lbl.TabIndex = 19;
-            this.Customer_Lbl.Text = "Customer Name :";
+            this.Customer_Lbl.Text = "Customer Name";
             // 
             // label1
             // 
@@ -208,7 +229,7 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Location = new System.Drawing.Point(279, 112);
+            this.UpdateBtn.Location = new System.Drawing.Point(807, 221);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(97, 36);
             this.UpdateBtn.TabIndex = 9;
@@ -218,7 +239,7 @@
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(279, 154);
+            this.Clear.Location = new System.Drawing.Point(919, 221);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(97, 36);
             this.Clear.TabIndex = 10;
@@ -226,286 +247,380 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // mieCakalang
+            // idMieCakalang
             // 
-            this.mieCakalang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mieCakalang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mieCakalang.Image = ((System.Drawing.Image)(resources.GetObject("mieCakalang.Image")));
-            this.mieCakalang.Location = new System.Drawing.Point(3, 3);
-            this.mieCakalang.Name = "mieCakalang";
-            this.mieCakalang.Size = new System.Drawing.Size(120, 127);
-            this.mieCakalang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.mieCakalang.TabIndex = 14;
-            this.mieCakalang.TabStop = false;
-            this.mieCakalang.Tag = "noodle";
-            this.mieCakalang.Click += new System.EventHandler(this.NoodlePic_Click);
+            this.idMieCakalang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idMieCakalang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idMieCakalang.Image = ((System.Drawing.Image)(resources.GetObject("idMieCakalang.Image")));
+            this.idMieCakalang.Location = new System.Drawing.Point(15, 11);
+            this.idMieCakalang.Name = "idMieCakalang";
+            this.idMieCakalang.Size = new System.Drawing.Size(110, 110);
+            this.idMieCakalang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idMieCakalang.TabIndex = 14;
+            this.idMieCakalang.TabStop = false;
+            this.idMieCakalang.Tag = "noodle";
             // 
             // FoodDisplay
             // 
             this.FoodDisplay.AutoScroll = true;
+            this.FoodDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FoodDisplay.Controls.Add(this.mieCakalang);
-            this.FoodDisplay.Controls.Add(this.nasiGoreng);
             this.FoodDisplay.Controls.Add(this.ayamGeprek);
-            this.FoodDisplay.Controls.Add(this.ayamLalapan);
+            this.FoodDisplay.Controls.Add(this.nutrisari);
+            this.FoodDisplay.Controls.Add(this.airMineral);
+            this.FoodDisplay.Controls.Add(this.nasiGoreng);
             this.FoodDisplay.Controls.Add(this.mieKuah);
-            this.FoodDisplay.Controls.Add(this.pictureBox7);
-            this.FoodDisplay.Controls.Add(this.pictureBox2);
-            this.FoodDisplay.Location = new System.Drawing.Point(279, 295);
+            this.FoodDisplay.Controls.Add(this.ayamLalapan);
+            this.FoodDisplay.Location = new System.Drawing.Point(279, 102);
+            this.FoodDisplay.Margin = new System.Windows.Forms.Padding(5);
             this.FoodDisplay.Name = "FoodDisplay";
-            this.FoodDisplay.Size = new System.Drawing.Size(400, 284);
+            this.FoodDisplay.Padding = new System.Windows.Forms.Padding(10);
+            this.FoodDisplay.Size = new System.Drawing.Size(502, 316);
             this.FoodDisplay.TabIndex = 15;
-            this.FoodDisplay.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            //
+            // mieCakalang
             // 
-            // nasiGoreng
+            this.mieCakalang.Controls.Add(this.miecakalangNum);
+            this.mieCakalang.Controls.Add(this.idMieCakalang);
+            this.mieCakalang.Controls.Add(this.label7);
+            this.mieCakalang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mieCakalang.Location = new System.Drawing.Point(13, 13);
+            this.mieCakalang.Name = "mieCakalang";
+            this.mieCakalang.Size = new System.Drawing.Size(145, 160);
+            this.mieCakalang.TabIndex = 25;
+            this.mieCakalang.TabStop = false;
             // 
-            this.nasiGoreng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nasiGoreng.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nasiGoreng.Image = ((System.Drawing.Image)(resources.GetObject("nasiGoreng.Image")));
-            this.nasiGoreng.Location = new System.Drawing.Point(129, 3);
-            this.nasiGoreng.Name = "nasiGoreng";
-            this.nasiGoreng.Size = new System.Drawing.Size(120, 127);
-            this.nasiGoreng.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.nasiGoreng.TabIndex = 18;
-            this.nasiGoreng.TabStop = false;
-            this.nasiGoreng.Tag = "burger";
-            this.nasiGoreng.Click += new System.EventHandler(this.nasiGoreng_Click);
+            // miecakalangNum
+            // 
+            this.miecakalangNum.Location = new System.Drawing.Point(110, 130);
+            this.miecakalangNum.Name = "miecakalangNum";
+            this.miecakalangNum.Size = new System.Drawing.Size(32, 20);
+            this.miecakalangNum.TabIndex = 7;
+            this.miecakalangNum.ValueChanged += new System.EventHandler(this.miecakalangNum_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 35);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Mie Cakalang\r\nRp.12.000,00\r\n";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ayamGeprek
             // 
             this.ayamGeprek.BackColor = System.Drawing.Color.Transparent;
-            this.ayamGeprek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ayamGeprek.Controls.Add(this.ayamgeprekNum);
+            this.ayamGeprek.Controls.Add(this.idAyamGeprek);
+            this.ayamGeprek.Controls.Add(this.label3);
             this.ayamGeprek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ayamGeprek.Image = ((System.Drawing.Image)(resources.GetObject("ayamGeprek.Image")));
-            this.ayamGeprek.Location = new System.Drawing.Point(255, 3);
+            this.ayamGeprek.Location = new System.Drawing.Point(164, 13);
             this.ayamGeprek.Name = "ayamGeprek";
-            this.ayamGeprek.Size = new System.Drawing.Size(120, 127);
-            this.ayamGeprek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ayamGeprek.TabIndex = 22;
+            this.ayamGeprek.Size = new System.Drawing.Size(145, 160);
+            this.ayamGeprek.TabIndex = 26;
             this.ayamGeprek.TabStop = false;
-            this.ayamGeprek.Tag = "burger";
-            this.ayamGeprek.Click += new System.EventHandler(this.ayamGeprek_Click);
             // 
-            // ayamLalapan
+            // ayamgeprekNum
             // 
-            this.ayamLalapan.BackColor = System.Drawing.Color.Transparent;
-            this.ayamLalapan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ayamLalapan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ayamLalapan.Image = ((System.Drawing.Image)(resources.GetObject("ayamLalapan.Image")));
-            this.ayamLalapan.Location = new System.Drawing.Point(3, 136);
-            this.ayamLalapan.Name = "ayamLalapan";
-            this.ayamLalapan.Size = new System.Drawing.Size(120, 127);
-            this.ayamLalapan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ayamLalapan.TabIndex = 19;
-            this.ayamLalapan.TabStop = false;
-            this.ayamLalapan.Tag = "burger";
-            this.ayamLalapan.Click += new System.EventHandler(this.ayamLalapan_Click);
+            this.ayamgeprekNum.Location = new System.Drawing.Point(110, 130);
+            this.ayamgeprekNum.Name = "ayamgeprekNum";
+            this.ayamgeprekNum.Size = new System.Drawing.Size(32, 20);
+            this.ayamgeprekNum.TabIndex = 7;
+            this.ayamgeprekNum.ValueChanged += new System.EventHandler(this.ayamgeprekNum_ValueChanged);
+            // 
+            // idAyamGeprek
+            // 
+            this.idAyamGeprek.BackColor = System.Drawing.Color.Transparent;
+            this.idAyamGeprek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idAyamGeprek.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idAyamGeprek.Image = ((System.Drawing.Image)(resources.GetObject("idAyamGeprek.Image")));
+            this.idAyamGeprek.Location = new System.Drawing.Point(15, 11);
+            this.idAyamGeprek.Name = "idAyamGeprek";
+            this.idAyamGeprek.Size = new System.Drawing.Size(110, 110);
+            this.idAyamGeprek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idAyamGeprek.TabIndex = 22;
+            this.idAyamGeprek.TabStop = false;
+            this.idAyamGeprek.Tag = "burger";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(3, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 35);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Ayam Geprek\r\nRp.15.000,00\r\n";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nasiGoreng
+            // 
+            this.nasiGoreng.Controls.Add(this.nasigorengNum);
+            this.nasiGoreng.Controls.Add(this.label6);
+            this.nasiGoreng.Controls.Add(this.idNasiGoreng);
+            this.nasiGoreng.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nasiGoreng.Location = new System.Drawing.Point(164, 179);
+            this.nasiGoreng.Name = "nasiGoreng";
+            this.nasiGoreng.Size = new System.Drawing.Size(145, 160);
+            this.nasiGoreng.TabIndex = 27;
+            this.nasiGoreng.TabStop = false;
+            // 
+            // nasigorengNum
+            // 
+            this.nasigorengNum.Location = new System.Drawing.Point(110, 130);
+            this.nasigorengNum.Name = "nasigorengNum";
+            this.nasigorengNum.Size = new System.Drawing.Size(32, 20);
+            this.nasigorengNum.TabIndex = 7;
+            this.nasigorengNum.ValueChanged += new System.EventHandler(this.nasigorengNum_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(3, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 35);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Nasi Goreng\r\nRp.15.000,00\r\n";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // idNasiGoreng
+            // 
+            this.idNasiGoreng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idNasiGoreng.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idNasiGoreng.Image = ((System.Drawing.Image)(resources.GetObject("idNasiGoreng.Image")));
+            this.idNasiGoreng.Location = new System.Drawing.Point(15, 11);
+            this.idNasiGoreng.Name = "idNasiGoreng";
+            this.idNasiGoreng.Size = new System.Drawing.Size(110, 110);
+            this.idNasiGoreng.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idNasiGoreng.TabIndex = 18;
+            this.idNasiGoreng.TabStop = false;
+            this.idNasiGoreng.Tag = "burger";
             // 
             // mieKuah
             // 
-            this.mieKuah.BackColor = System.Drawing.Color.Transparent;
-            this.mieKuah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mieKuah.Controls.Add(this.miekuahNum);
+            this.mieKuah.Controls.Add(this.label9);
+            this.mieKuah.Controls.Add(this.idMieKuah);
             this.mieKuah.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mieKuah.Image = ((System.Drawing.Image)(resources.GetObject("mieKuah.Image")));
-            this.mieKuah.Location = new System.Drawing.Point(129, 136);
+            this.mieKuah.Location = new System.Drawing.Point(315, 179);
             this.mieKuah.Name = "mieKuah";
-            this.mieKuah.Size = new System.Drawing.Size(120, 127);
-            this.mieKuah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.mieKuah.TabIndex = 23;
+            this.mieKuah.Size = new System.Drawing.Size(145, 160);
+            this.mieKuah.TabIndex = 27;
             this.mieKuah.TabStop = false;
-            this.mieKuah.Tag = "burger";
-            this.mieKuah.Click += new System.EventHandler(this.mieKuah_Click);
             // 
-            // pictureBox7
+            // miekuahNum
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Location = new System.Drawing.Point(255, 136);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 19;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Tag = "burger";
+            this.miekuahNum.Location = new System.Drawing.Point(110, 130);
+            this.miekuahNum.Name = "miekuahNum";
+            this.miekuahNum.Size = new System.Drawing.Size(32, 20);
+            this.miekuahNum.TabIndex = 7;
+            this.miekuahNum.ValueChanged += new System.EventHandler(this.miekuahNum_ValueChanged);
             // 
-            // pictureBox2
+            // label9
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 269);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "burger";
+            this.label9.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 122);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 35);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Mie Kuah\r\nRp.10.000,00\r\n";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // idMieKuah
+            // 
+            this.idMieKuah.BackColor = System.Drawing.Color.Transparent;
+            this.idMieKuah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idMieKuah.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idMieKuah.Image = ((System.Drawing.Image)(resources.GetObject("idMieKuah.Image")));
+            this.idMieKuah.Location = new System.Drawing.Point(15, 11);
+            this.idMieKuah.Name = "idMieKuah";
+            this.idMieKuah.Size = new System.Drawing.Size(110, 110);
+            this.idMieKuah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idMieKuah.TabIndex = 23;
+            this.idMieKuah.TabStop = false;
+            this.idMieKuah.Tag = "burger";
+            // 
+            // ayamLalapan
+            // 
+            this.ayamLalapan.Controls.Add(this.ayamlalapanNum);
+            this.ayamLalapan.Controls.Add(this.idAyamLalapan);
+            this.ayamLalapan.Controls.Add(this.label8);
+            this.ayamLalapan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ayamLalapan.Location = new System.Drawing.Point(13, 345);
+            this.ayamLalapan.Name = "ayamLalapan";
+            this.ayamLalapan.Size = new System.Drawing.Size(145, 160);
+            this.ayamLalapan.TabIndex = 26;
+            this.ayamLalapan.TabStop = false;
+            // 
+            // ayamlalapanNum
+            // 
+            this.ayamlalapanNum.Location = new System.Drawing.Point(110, 130);
+            this.ayamlalapanNum.Name = "ayamlalapanNum";
+            this.ayamlalapanNum.Size = new System.Drawing.Size(32, 20);
+            this.ayamlalapanNum.TabIndex = 7;
+            this.ayamlalapanNum.ValueChanged += new System.EventHandler(this.ayamlalapanNum_ValueChanged);
+            // 
+            // idAyamLalapan
+            // 
+            this.idAyamLalapan.BackColor = System.Drawing.Color.Transparent;
+            this.idAyamLalapan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idAyamLalapan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idAyamLalapan.Image = ((System.Drawing.Image)(resources.GetObject("idAyamLalapan.Image")));
+            this.idAyamLalapan.Location = new System.Drawing.Point(15, 11);
+            this.idAyamLalapan.Name = "idAyamLalapan";
+            this.idAyamLalapan.Size = new System.Drawing.Size(110, 110);
+            this.idAyamLalapan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idAyamLalapan.TabIndex = 19;
+            this.idAyamLalapan.TabStop = false;
+            this.idAyamLalapan.Tag = "burger";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 122);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 35);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Ayam Lalapan\r\nRp.25.000,00\r\n";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.Location = new System.Drawing.Point(447, 70);
+            this.dataGridView1.Location = new System.Drawing.Point(279, 450);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(629, 120);
+            this.dataGridView1.Size = new System.Drawing.Size(808, 197);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.TabStop = false;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // DrinkDisplay
-            // 
-            this.DrinkDisplay.AutoScroll = true;
-            this.DrinkDisplay.Controls.Add(this.airMineral);
-            this.DrinkDisplay.Controls.Add(this.nutrisari);
-            this.DrinkDisplay.Controls.Add(this.pictureBox1);
-            this.DrinkDisplay.Controls.Add(this.pictureBox11);
-            this.DrinkDisplay.Controls.Add(this.pictureBox10);
-            this.DrinkDisplay.Controls.Add(this.pictureBox9);
-            this.DrinkDisplay.Controls.Add(this.pictureBox8);
-            this.DrinkDisplay.Location = new System.Drawing.Point(701, 295);
-            this.DrinkDisplay.Name = "DrinkDisplay";
-            this.DrinkDisplay.Size = new System.Drawing.Size(399, 283);
-            this.DrinkDisplay.TabIndex = 21;
             // 
             // airMineral
             // 
-            this.airMineral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.airMineral.Controls.Add(this.idAirMineral);
+            this.airMineral.Controls.Add(this.airNum);
+            this.airMineral.Controls.Add(this.label10);
             this.airMineral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.airMineral.Image = ((System.Drawing.Image)(resources.GetObject("airMineral.Image")));
-            this.airMineral.Location = new System.Drawing.Point(3, 3);
+            this.airMineral.Location = new System.Drawing.Point(13, 179);
             this.airMineral.Name = "airMineral";
-            this.airMineral.Size = new System.Drawing.Size(120, 127);
-            this.airMineral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.airMineral.TabIndex = 14;
+            this.airMineral.Size = new System.Drawing.Size(145, 160);
+            this.airMineral.TabIndex = 27;
             this.airMineral.TabStop = false;
-            this.airMineral.Tag = "noodle";
-            this.airMineral.Click += new System.EventHandler(this.airMineral_Click);
+            // 
+            // idAirMineral
+            // 
+            this.idAirMineral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idAirMineral.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idAirMineral.Image = ((System.Drawing.Image)(resources.GetObject("idAirMineral.Image")));
+            this.idAirMineral.Location = new System.Drawing.Point(15, 11);
+            this.idAirMineral.Name = "idAirMineral";
+            this.idAirMineral.Size = new System.Drawing.Size(110, 110);
+            this.idAirMineral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idAirMineral.TabIndex = 14;
+            this.idAirMineral.TabStop = false;
+            this.idAirMineral.Tag = "noodle";
+            // 
+            // airNum
+            // 
+            this.airNum.Location = new System.Drawing.Point(110, 130);
+            this.airNum.Name = "airNum";
+            this.airNum.Size = new System.Drawing.Size(32, 20);
+            this.airNum.TabIndex = 7;
+            this.airNum.ValueChanged += new System.EventHandler(this.airNum_ValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 122);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 35);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Air Mineral\r\nRp.5.000,00\r\n";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nutrisari
             // 
-            this.nutrisari.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nutrisari.Controls.Add(this.idNutrisari);
+            this.nutrisari.Controls.Add(this.nutriNum);
+            this.nutrisari.Controls.Add(this.label11);
             this.nutrisari.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nutrisari.Image = ((System.Drawing.Image)(resources.GetObject("nutrisari.Image")));
-            this.nutrisari.Location = new System.Drawing.Point(129, 3);
+            this.nutrisari.Location = new System.Drawing.Point(315, 13);
             this.nutrisari.Name = "nutrisari";
-            this.nutrisari.Size = new System.Drawing.Size(120, 127);
-            this.nutrisari.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.nutrisari.TabIndex = 18;
+            this.nutrisari.Size = new System.Drawing.Size(145, 160);
+            this.nutrisari.TabIndex = 28;
             this.nutrisari.TabStop = false;
-            this.nutrisari.Tag = "burger";
-            this.nutrisari.Click += new System.EventHandler(this.nutrisari_Click);
             // 
-            // pictureBox1
+            // idNutrisari
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(255, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "burger";
+            this.idNutrisari.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idNutrisari.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.idNutrisari.Image = ((System.Drawing.Image)(resources.GetObject("idNutrisari.Image")));
+            this.idNutrisari.Location = new System.Drawing.Point(15, 11);
+            this.idNutrisari.Name = "idNutrisari";
+            this.idNutrisari.Size = new System.Drawing.Size(110, 110);
+            this.idNutrisari.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.idNutrisari.TabIndex = 18;
+            this.idNutrisari.TabStop = false;
+            this.idNutrisari.Tag = "burger";
             // 
-            // pictureBox11
+            // nutriNum
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Location = new System.Drawing.Point(3, 136);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 21;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Tag = "burger";
+            this.nutriNum.Location = new System.Drawing.Point(110, 130);
+            this.nutriNum.Name = "nutriNum";
+            this.nutriNum.Size = new System.Drawing.Size(32, 20);
+            this.nutriNum.TabIndex = 7;
+            this.nutriNum.ValueChanged += new System.EventHandler(this.nutriNum_ValueChanged);
             // 
-            // pictureBox10
+            // label11
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox10.Location = new System.Drawing.Point(129, 136);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 20;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Tag = "burger";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Location = new System.Drawing.Point(255, 136);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 23;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Tag = "burger";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox8.Location = new System.Drawing.Point(3, 269);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(120, 127);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 22;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "burger";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Harrington", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(273, 252);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 32);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Foods";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Harrington", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(698, 252);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 32);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Drinks";
+            this.label11.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 122);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 35);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Nutrisari\r\nRp.5.000,00\r\n";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ResetBtn
             // 
-            this.ResetBtn.Location = new System.Drawing.Point(402, 213);
+            this.ResetBtn.Location = new System.Drawing.Point(829, 277);
             this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(97, 36);
+            this.ResetBtn.Size = new System.Drawing.Size(75, 37);
             this.ResetBtn.TabIndex = 24;
             this.ResetBtn.Text = "Reset";
             this.ResetBtn.UseVisualStyleBackColor = true;
             this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(278, 64);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 37);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Food";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(381, 64);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 37);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Drink";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Foods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 594);
+            this.ClientSize = new System.Drawing.Size(1112, 647);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.ResetBtn);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.Searchlabel);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.Searchbox);
             this.Controls.Add(this.CustomerTxt);
-            this.Controls.Add(this.DrinkDisplay);
             this.Controls.Add(this.FoodDisplay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Customer_Lbl);
@@ -520,23 +635,29 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mieCakalang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idMieCakalang)).EndInit();
             this.FoodDisplay.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nasiGoreng)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayamGeprek)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ayamLalapan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mieKuah)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.mieCakalang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.miecakalangNum)).EndInit();
+            this.ayamGeprek.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ayamgeprekNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idAyamGeprek)).EndInit();
+            this.nasiGoreng.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nasigorengNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idNasiGoreng)).EndInit();
+            this.mieKuah.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.miekuahNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idMieKuah)).EndInit();
+            this.ayamLalapan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ayamlalapanNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idAyamLalapan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.DrinkDisplay.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airMineral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nutrisari)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.airMineral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.idAirMineral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airNum)).EndInit();
+            this.nutrisari.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.idNutrisari)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nutriNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,31 +672,44 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.PictureBox mieCakalang;
+        private System.Windows.Forms.PictureBox idMieCakalang;
         private System.Windows.Forms.FlowLayoutPanel FoodDisplay;
         private System.Windows.Forms.TextBox Searchbox;
         private System.Windows.Forms.Label Searchlabel;
-        private System.Windows.Forms.PictureBox nasiGoreng;
+        private System.Windows.Forms.PictureBox idNasiGoreng;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Customer_Lbl;
         private System.Windows.Forms.TextBox CustomerTxt;
-        private System.Windows.Forms.PictureBox ayamLalapan;
-        private System.Windows.Forms.PictureBox ayamGeprek;
-        private System.Windows.Forms.PictureBox mieKuah;
-        private System.Windows.Forms.FlowLayoutPanel DrinkDisplay;
-        private System.Windows.Forms.PictureBox airMineral;
-        private System.Windows.Forms.PictureBox nutrisari;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox idAyamLalapan;
+        private System.Windows.Forms.PictureBox idAyamGeprek;
+        private System.Windows.Forms.PictureBox idMieKuah;
+        private System.Windows.Forms.PictureBox idAirMineral;
+        private System.Windows.Forms.PictureBox idNutrisari;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ResetBtn;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox mieCakalang;
+        private System.Windows.Forms.NumericUpDown miecakalangNum;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox ayamGeprek;
+        private System.Windows.Forms.NumericUpDown ayamgeprekNum;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox nasiGoreng;
+        private System.Windows.Forms.NumericUpDown nasigorengNum;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox ayamLalapan;
+        private System.Windows.Forms.NumericUpDown ayamlalapanNum;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox mieKuah;
+        private System.Windows.Forms.NumericUpDown miekuahNum;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox airMineral;
+        private System.Windows.Forms.NumericUpDown airNum;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox nutrisari;
+        private System.Windows.Forms.NumericUpDown nutriNum;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

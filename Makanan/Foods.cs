@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 
 namespace Makanan
@@ -27,8 +28,9 @@ namespace Makanan
         private DataSet ds = new DataSet();
         private string alamat, query;
 
-        string choiceDrink, choiceFood;
-        string orderPrice;
+        string orderPrice, choiceFood, choiceDrink;
+        decimal price;
+        decimal amountLalapan, amountGeprek, amountNasiGoreng, amountMieKuah, amountMieCakalang, amountAir, amountNutri;
         List<string> Orders = new List<string>();
 
         public Foods()
@@ -40,21 +42,40 @@ namespace Makanan
             InitializeComponent();
         }
 
-        private void linearsearch(List<string> Arr, string keyword , int size, int index)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            index += 1;
-
-            if(size == 0)
+            try
             {
-                this.Refresh();
+                koneksi.Open();
+                query = string.Format("Select username, Orders, Table_Num from menu");
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
+                ds.Clear();
+                adapter.Fill(ds);
+                koneksi.Close();
+
+                dataGridView1.DataSource = ds.Tables[0];
+                dataGridView1.Columns[0].Width = 30;
+                dataGridView1.Columns[0].HeaderText = "Customer name";
+                dataGridView1.Columns[1].Width = 100;
+                dataGridView1.Columns[1].HeaderText = "Orders";
+                dataGridView1.Columns[2].Width = 30;
+                dataGridView1.Columns[2].HeaderText = "Table Num";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        protected void Searchbox_TextChanged(object sender, EventArgs e)
+        private void Searchbox_TextChanged(object sender, EventArgs e)
         {
-            PicRefreshFood();
-            foreach(PictureBox item in FoodDisplay.Controls)
+            button2.BackColor = Color.White;
+            button3.BackColor = Color.White;
+            foreach(Control item in FoodDisplay.Controls)
             {
+                item.Show();
                 string search = Searchbox.Text.Replace(" ","");
                 string itemName = Convert.ToString(TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToLower();
 
@@ -65,78 +86,25 @@ namespace Makanan
                     item.Hide();
                 }
             }
-
-            foreach (PictureBox item in DrinkDisplay.Controls)
-            {
-                string search = Searchbox.Text.Replace(" ", "");
-                string itemName = Convert.ToString(TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToLower();
-
-                bool found = itemName.Contains(search);
-
-                if (found == false)
-                {
-                    item.Hide();
-                }
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void PicRefreshFood()
         {
-            this.mieCakalang.Show();
-            this.nasiGoreng.Show();
-            this.ayamGeprek.Show();
-            this.mieKuah.Show();
-            this.ayamLalapan.Show();
-            this.nutrisari.Show();
-            this.airMineral.Show();
-
-            this.mieCakalang.BackColor = Color.Transparent;
-            this.nasiGoreng.BackColor = Color.Transparent;
-            this.ayamGeprek.BackColor = Color.Transparent;
-            this.mieKuah.BackColor = Color.Transparent;
-            this.ayamLalapan.BackColor = Color.Transparent;
-            this.nutrisari.BackColor = Color.Transparent;
-            this.airMineral.BackColor = Color.Transparent;
+            Searchbox.Text = "";
+            foreach(Control item in FoodDisplay.Controls)
+            {
+                item.Show();
+                foreach (Control innerControl in item.Controls)
+                {
+                    if (innerControl is NumericUpDown numericUpDown)
+                    {
+                        numericUpDown.Value = 0;
+                    }
+                }
+            }
         }
-
-        //Form Customer
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Customer Customer = new Customer();
-            Customer.Show();
-        }
-
-        private void btnTables_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            table table = new table();
-            table.Show();
-        }
-
-        private void btnFoods_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            order order = new order();
-            order.Show();
-        }
-
-        //Update (Add)
-        private void UpdateBtn_Click(object sender, EventArgs e)
+        
+        private void sqlUpdate()
         {
             if (koneksi.State != ConnectionState.Open)
             {
@@ -167,6 +135,16 @@ namespace Makanan
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        //Update (Add)
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            ListInsert();
+            sqlUpdate();
+
+            PicRefreshFood();
+            Orders.Clear();
         }
 
         //Delete (Clear Orders)
@@ -205,15 +183,34 @@ namespace Makanan
             }
         }
             
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            //Food Click
+            this.button2.BackColor = Color.Silver;
+            this.button3.BackColor = Color.White;
 
+            this.mieCakalang.Show();
+            this.mieKuah.Show();
+            this.ayamGeprek.Show();
+            this.ayamLalapan.Show();
+            this.nasiGoreng.Show();
+            this.airMineral.Hide();
+            this.nutrisari.Hide();
         }
 
-
-        private void CustomerTxt_TextChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
+            //Drink Click
+            this.button3.BackColor = Color.Silver;
+            this.button2.BackColor = Color.White;
 
+            this.mieCakalang.Hide();
+            this.mieKuah.Hide();
+            this.ayamGeprek.Hide();
+            this.ayamLalapan.Hide();
+            this.nasiGoreng.Hide();
+            this.airMineral.Show();
+            this.nutrisari.Show();
         }
 
         private void ResetBtn_Click(object sender, EventArgs e)
@@ -222,98 +219,177 @@ namespace Makanan
             Orders.Clear();
         }
 
-        //Foods
-        //ayam lalapan
-        private void ayamLalapan_Click(object sender, EventArgs e)
+        private void ListInsert()
         {
-            this.ayamLalapan.BackColor = Color.LightGray;
-            orderPrice = "Rp.18000";
-            choiceFood = "Ayam Lalapan " + orderPrice;
-            Orders.Add(choiceFood);
-        }
-
-        //Nasi Goreng
-        private void nasiGoreng_Click(object sender, EventArgs e)
-        {
-            
-            this.nasiGoreng.BackColor = Color.LightGray;
-            orderPrice = "Rp.15000";
-            choiceFood = "Nasi Goreng " + orderPrice;
-            Orders.Add(choiceFood);
-        }
-
-        //Ayam Geprek
-        private void ayamGeprek_Click(object sender, EventArgs e)
-        {
-            
-            this.ayamGeprek.BackColor = Color.LightGray;
-            orderPrice = "Rp.18000";
-            choiceFood = "Ayam Geprek " + orderPrice;
-            Orders.Add(choiceFood);
-        }
-
-        //Mie kuah
-        private void mieKuah_Click(object sender, EventArgs e)
-        {
-            this.mieKuah.BackColor = Color.LightGray;
-            orderPrice = "Rp.10000";
-            choiceFood = "Mie kuah " + orderPrice;
-            Orders.Add(choiceFood);
-        }
-
-        //Mie Cakalang
-        private void NoodlePic_Click(object sender, EventArgs e)
-        {
-            this.mieCakalang.BackColor = Color.LightGray;
-            orderPrice = "Rp.12000";
-            choiceFood = "Mie Cakalang " + orderPrice;
-            Orders.Add(choiceFood);
-        }
-        
-        //Drinks
-        //air mineral
-        private void airMineral_Click(object sender, EventArgs e)
-        {
-            this.airMineral.BackColor = Color.LightGray;
-            orderPrice = "Rp.5000";
-            choiceDrink = "Air Mineral " + orderPrice;
-            Orders.Add(choiceDrink);
-        }
-
-        //Nutri Sari
-        private void nutrisari_Click(object sender, EventArgs e)
-        {
-            this.nutrisari.BackColor = Color.LightGray;
-            orderPrice = "Rp.7000";
-            choiceDrink = "Nutri Sari " + orderPrice;
-            Orders.Add(choiceDrink);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            try
+            //Foods
+            if (amountLalapan > 0)
             {
-                koneksi.Open();
-                query = string.Format("Select username, Orders, Table_Num from menu");
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                perintah.ExecuteNonQuery();
-                ds.Clear();
-                adapter.Fill(ds);
-                koneksi.Close();
-
-                dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[0].Width = 30;
-                dataGridView1.Columns[0].HeaderText = "Customer name";
-                dataGridView1.Columns[1].Width = 100;
-                dataGridView1.Columns[1].HeaderText = "Orders";
-                dataGridView1.Columns[2].Width = 30;
-                dataGridView1.Columns[2].HeaderText = "Table Num";
+                price = 18000 * amountLalapan;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Ayam Lalapan x{0}, {1}", amountLalapan, orderPrice);
+                Orders.Add(choiceFood);
             }
-            catch (Exception ex)
+            if (amountGeprek > 0)
             {
-                MessageBox.Show(ex.ToString());
+                price = 15000 * amountGeprek;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Ayam Geprek x{0}, {1}", amountGeprek, orderPrice);
+                Orders.Add(choiceFood);
             }
+            if (amountNasiGoreng > 0)
+            {
+                price = 15000 * amountNasiGoreng;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Nasi Goreng x{0}, {1}", amountNasiGoreng, orderPrice);
+                Orders.Add(choiceFood);
+            }
+            if (amountMieKuah > 0)
+            {
+                price = 10000 * amountMieKuah;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Mie Kuah x{0}, {1}", amountMieKuah, orderPrice);
+                Orders.Add(choiceFood);
+            }
+            if (amountMieCakalang > 0)
+            {
+                price = 12000 * amountMieCakalang;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Mie Cakalang x{0}, {1}", amountMieCakalang, orderPrice);
+                Orders.Add(choiceFood);
+            }
+
+            //Drinks
+            if (amountAir > 0)
+            {
+                price = 5000 * amountAir;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Air Mineral x{0}, {1}", amountAir, orderPrice);
+                Orders.Add(choiceFood);
+            }
+            if (amountNutri > 0)
+            {
+                price = 5000 * amountNutri;
+                orderPrice = "Rp." + price;
+                choiceFood = string.Format("Nutri Sari x{0}, {1}", amountNutri, orderPrice);
+                Orders.Add(choiceFood);
+            }
+        }
+       
+        private void ayamlalapanNum_ValueChanged(object sender, EventArgs e)
+        {   
+            amountLalapan = ayamlalapanNum.Value;
+            if (amountLalapan == 0)
+            {
+                this.ayamLalapan.BackColor = Color.Transparent;
+            }
+            else if (amountLalapan > 0)
+            {
+                this.ayamLalapan.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void ayamgeprekNum_ValueChanged(object sender, EventArgs e)
+        {
+            amountGeprek = ayamgeprekNum.Value;
+            if (amountGeprek == 0)
+            {
+                this.ayamGeprek.BackColor = Color.Transparent;
+            }
+            else if (amountGeprek > 0)
+            {
+                this.ayamGeprek.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void miecakalangNum_ValueChanged(object sender, EventArgs e)
+        {
+            amountMieCakalang = miecakalangNum.Value;
+            if (amountMieCakalang == 0)
+            {
+                this.mieCakalang.BackColor = Color.Transparent;
+            }
+            else if (amountMieCakalang > 0)
+            {
+                this.mieCakalang.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void miekuahNum_ValueChanged(object sender, EventArgs e)
+        {
+            amountMieKuah = miekuahNum.Value;
+            if (amountMieKuah == 0)
+            {
+                this.mieKuah.BackColor = Color.Transparent;
+            }
+            else if (amountMieKuah > 0)
+            {
+                this.mieKuah.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void nasigorengNum_ValueChanged(object sender, EventArgs e)
+        {
+            amountNasiGoreng = nasigorengNum.Value;
+            if (amountNasiGoreng == 0)
+            {
+                this.nasiGoreng.BackColor = Color.Transparent;
+            }
+            else if (amountNasiGoreng > 0)
+            {
+                this.nasiGoreng.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void airNum_ValueChanged(object sender, EventArgs e)
+        {
+            amountAir = airNum.Value;
+            if(amountAir == 0)
+            {
+                this.airMineral.BackColor = Color.Transparent;
+            }
+            else if(amountAir > 0)
+            {
+                this.airMineral.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void nutriNum_ValueChanged(object sender, EventArgs e)
+        {
+            amountNutri = nutriNum.Value;
+            if (amountNutri == 0)
+            {
+                this.nutrisari.BackColor = Color.Transparent;
+            }
+            else if (amountNutri > 0)
+            {
+                this.nutrisari.BackColor = Color.LightYellow;
+            }
+        }
+
+        //Form Customer
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Customer Customer = new Customer();
+            Customer.Show();
+        }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            table table = new table();
+            table.Show();
+        }
+
+        private void btnFoods_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            order order = new order();
+            order.Show();
         }
     }
 }

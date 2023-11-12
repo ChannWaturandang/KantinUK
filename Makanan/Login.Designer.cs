@@ -101,7 +101,7 @@
             this.panel1.Controls.Add(this.descRegis);
             this.panel1.Location = new System.Drawing.Point(433, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 498);
+            this.panel1.Size = new System.Drawing.Size(352, 501);
             this.panel1.TabIndex = 6;
             // 
             // label3
@@ -220,6 +220,10 @@
             // 
             // Login
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 498);
             this.Controls.Add(this.checkBox1);
@@ -233,6 +237,7 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_Load_1);
