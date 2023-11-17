@@ -36,9 +36,6 @@
     <StartupObject>Makanan.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,17 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer.cs">
+    <Compile Include="Controls\FoodsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FoodsControl.Designer.cs">
+      <DependentUpon>FoodsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Foods.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Foods.Designer.cs">
-      <DependentUpon>Foods.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -74,11 +71,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="order.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controls\OrdersControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order.Designer.cs">
-      <DependentUpon>order.cs</DependentUpon>
+    <Compile Include="Controls\OrdersControl.Designer.cs">
+      <DependentUpon>OrdersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,23 +85,32 @@
     <Compile Include="signup.Designer.cs">
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="table.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controls\CustomerControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="table.Designer.cs">
-      <DependentUpon>table.cs</DependentUpon>
+    <Compile Include="Controls\CustomerControl.Designer.cs">
+      <DependentUpon>CustomerControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <Compile Include="Controls\TableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TableControl.Designer.cs">
+      <DependentUpon>TableControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\FoodsControl.resx">
+      <DependentUpon>FoodsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Foods.resx">
-      <DependentUpon>Foods.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomerControl.resx">
+      <DependentUpon>CustomerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="order.resx">
-      <DependentUpon>order.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\OrdersControl.resx">
+      <DependentUpon>OrdersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,10 +125,9 @@
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="table.resx">
-      <DependentUpon>table.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\TableControl.resx">
+      <DependentUpon>TableControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

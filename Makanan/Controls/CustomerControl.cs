@@ -1,22 +1,18 @@
-﻿using System;
-using System.CodeDom;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
-using static Guna.UI2.Native.WinApi;
 
 namespace Makanan
 {
-    public partial class Customer : Form
+    public partial class CustomerControl : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -24,8 +20,7 @@ namespace Makanan
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-
-        public Customer()
+        public CustomerControl()
         {
             alamat = "server=localhost; database=kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
@@ -34,7 +29,7 @@ namespace Makanan
             InitializeComponent();
         }
 
-        private void Customer_Load(object sender, EventArgs e)
+        private void CustomerControl_Load(object sender, EventArgs e)
         {
             try
             {
@@ -60,37 +55,6 @@ namespace Makanan
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (koneksi.State != ConnectionState.Open)
-            {
-                koneksi.Open();
-            }
-            try
-            {
-                query = string.Format("");
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                perintah.ExecuteNonQuery();
-
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void customerID_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void addCustomer_Click(object sender, EventArgs e)
@@ -121,7 +85,7 @@ namespace Makanan
                 koneksi.Close();
                 if (res == 1)
                 {
-                    Customer_Load(null, null);
+                    CustomerControl_Load(null, null);
                 }
             }
             catch (Exception ex)
@@ -144,7 +108,7 @@ namespace Makanan
                 if (res == 1)
                 {
                     MessageBox.Show("Insert data berhasil");
-                    Customer_Load(null, null);
+                    CustomerControl_Load(null, null);
                 }
                 else
                 {
@@ -177,7 +141,7 @@ namespace Makanan
                 if (res == 1)
                 {
                     MessageBox.Show("Insert data berhasil");
-                    Customer_Load(null, null);
+                    CustomerControl_Load(null, null);
                 }
             }
             catch (Exception ex)
@@ -202,7 +166,7 @@ namespace Makanan
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Customer_Load(null, null);
+                CustomerControl_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -223,7 +187,7 @@ namespace Makanan
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Customer_Load(null, null);
+                CustomerControl_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -231,7 +195,7 @@ namespace Makanan
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void clearCustomer_Click(object sender, EventArgs e)
         {
             txtUsernameCustomer.Text = "";
             txtPhoneCustomer.Text = "";
@@ -250,7 +214,7 @@ namespace Makanan
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Customer_Load(null, null);
+                CustomerControl_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -271,53 +235,12 @@ namespace Makanan
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Customer_Load(null, null);
+                CustomerControl_Load(null, null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        private void customerAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFoods_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Foods Foods = new Foods();
-            Foods.Show();
-        }
-
-        private void btnTables_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            table table = new table();
-            table.Show();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            order order = new order();
-            order.Show();
-        }
-
-        public void refresh_Click()
-        {
-            this.deleteCustomer.ForeColor = Color.Red;
-        }
     }
-};
+}
