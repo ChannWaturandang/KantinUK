@@ -48,7 +48,7 @@ namespace Makanan
                         sandi = kolom["password"].ToString();
                         if (sandi == txtPass.Text)
                         {
-                            Customer Customer = new Customer();
+                            MainMenu Customer = new MainMenu();
                             Customer.Show();
                             this.Hide();
                         }

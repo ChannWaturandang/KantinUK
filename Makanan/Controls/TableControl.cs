@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace Makanan
 {
-    public partial class table : Form
+    public partial class TableControl : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -23,43 +21,18 @@ namespace Makanan
         private string alamat, query;
 
         string n;
-        
-        public table()
+
+        public TableControl()
         {
             alamat = "server=localhost; database=Kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
+
             InitializeComponent();
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void TableControl_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void table_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Reset()
-        {
-            this.A1.BackColor = Color.DarkGray;
-            this.A2.BackColor = Color.DarkGray;
-            this.A3.BackColor = Color.DarkGray;
-            this.B1.BackColor = Color.DarkGray;
-            this.B2.BackColor = Color.DarkGray;
-            this.B3.BackColor = Color.DarkGray;
-            this.C1.BackColor = Color.DarkGray;
-            this.C2.BackColor = Color.DarkGray;
-            this.C3.BackColor = Color.DarkGray;
-            this.D1.BackColor = Color.DarkGray;
-            this.D2.BackColor = Color.DarkGray;
-            this.D3.BackColor = Color.DarkGray;
-            this.E1.BackColor = Color.DarkGray;
-            this.E2.BackColor = Color.DarkGray;
-            this.E3.BackColor = Color.DarkGray;
-            this.E4.BackColor = Color.DarkGray;
-            this.E5.BackColor = Color.DarkGray;
         }
 
         private void A1_Click(object sender, EventArgs e)
@@ -200,7 +173,7 @@ namespace Makanan
                 if (res == 1)
                 {
                     MessageBox.Show("Insert data success");
-                    table_Load(null, null);
+                    TableControl_Load(null, null);
                 }
                 else
                 {
@@ -213,35 +186,30 @@ namespace Makanan
             }
         }
 
-        private void btnFoods_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Foods Foods = new Foods();
-            Foods.Show();
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Customer Customer = new Customer();
-            Customer.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            order order = new order();
-            order.Show();
-        }
-
-        private void btnTables_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void confirmButton_Click(object sender, EventArgs e)
         {
             input(n);
+        }
+
+        private void Reset()
+        {
+            this.A1.BackColor = Color.DarkGray;
+            this.A2.BackColor = Color.DarkGray;
+            this.A3.BackColor = Color.DarkGray;
+            this.B1.BackColor = Color.DarkGray;
+            this.B2.BackColor = Color.DarkGray;
+            this.B3.BackColor = Color.DarkGray;
+            this.C1.BackColor = Color.DarkGray;
+            this.C2.BackColor = Color.DarkGray;
+            this.C3.BackColor = Color.DarkGray;
+            this.D1.BackColor = Color.DarkGray;
+            this.D2.BackColor = Color.DarkGray;
+            this.D3.BackColor = Color.DarkGray;
+            this.E1.BackColor = Color.DarkGray;
+            this.E2.BackColor = Color.DarkGray;
+            this.E3.BackColor = Color.DarkGray;
+            this.E4.BackColor = Color.DarkGray;
+            this.E5.BackColor = Color.DarkGray;
         }
     }
 }

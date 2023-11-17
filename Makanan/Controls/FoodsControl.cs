@@ -1,25 +1,17 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-
 
 namespace Makanan
 {
-    public partial class Foods : Form
+    public partial class FoodsControl : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -32,8 +24,7 @@ namespace Makanan
         decimal price;
         decimal amountLalapan, amountGeprek, amountNasiGoreng, amountMieKuah, amountMieCakalang, amountAir, amountNutri;
         List<string> Orders = new List<string>();
-
-        public Foods()
+        public FoodsControl()
         {
             alamat = "server=localhost; database=Kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
@@ -42,7 +33,7 @@ namespace Makanan
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FoodsControl_Load(object sender, EventArgs e)
         {
             try
             {
@@ -60,7 +51,7 @@ namespace Makanan
                 dataGridView1.Columns[0].HeaderText = "Customer name";
                 dataGridView1.Columns[1].Width = 100;
                 dataGridView1.Columns[1].HeaderText = "Orders";
-                dataGridView1.Columns[2].Width = 30;
+                dataGridView1.Columns[2].Width = 100;
                 dataGridView1.Columns[2].HeaderText = "Table Num";
             }
             catch (Exception ex)
@@ -69,29 +60,68 @@ namespace Makanan
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Food Click
+            this.button2.BackColor = Color.Silver;
+            this.button3.BackColor = Color.White;
+            Searchbox.Text = "";
+
+            this.mieCakalang.Show();
+            this.mieKuah.Show();
+            this.ayamGeprek.Show();
+            this.ayamLalapan.Show();
+            this.nasiGoreng.Show();
+            this.airMineral.Hide();
+            this.nutrisari.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Drink Click
+            this.button3.BackColor = Color.Silver;
+            this.button2.BackColor = Color.White;
+            Searchbox.Text = "";
+
+            this.mieCakalang.Hide();
+            this.mieKuah.Hide();
+            this.ayamGeprek.Hide();
+            this.ayamLalapan.Hide();
+            this.nasiGoreng.Hide();
+            this.airMineral.Show();
+            this.nutrisari.Show();
+            
+        }
+
         private void Searchbox_TextChanged(object sender, EventArgs e)
         {
             button2.BackColor = Color.White;
             button3.BackColor = Color.White;
-            foreach(Control item in FoodDisplay.Controls)
+            foreach (Control item in FoodDisplay.Controls)
             {
                 item.Show();
-                string search = Searchbox.Text.Replace(" ","");
+                string search = Searchbox.Text.Replace(" ", "");
                 string itemName = Convert.ToString(TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToLower();
 
                 bool found = itemName.Contains(search);
-                
-                if(found == false)
+
+                if (found == false)
                 {
                     item.Hide();
                 }
             }
         }
 
+        private void ResetBtn_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+            Orders.Clear();
+        }
+
         public void PicRefreshFood()
         {
             Searchbox.Text = "";
-            foreach(Control item in FoodDisplay.Controls)
+            foreach (Control item in FoodDisplay.Controls)
             {
                 item.Show();
                 foreach (Control innerControl in item.Controls)
@@ -103,7 +133,7 @@ namespace Makanan
                 }
             }
         }
-        
+
         private void sqlUpdate()
         {
             if (koneksi.State != ConnectionState.Open)
@@ -124,7 +154,7 @@ namespace Makanan
                 if (res == 1)
                 {
                     MessageBox.Show("Added :" + combinedString);
-                    Form1_Load(null, null);
+                    FoodsControl_Load(null, null);
                 }
                 else
                 {
@@ -135,88 +165,6 @@ namespace Makanan
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        //Update (Add)
-        private void UpdateBtn_Click(object sender, EventArgs e)
-        {
-            ListInsert();
-            sqlUpdate();
-
-            PicRefreshFood();
-            Orders.Clear();
-        }
-
-        //Delete (Clear Orders)
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {;
-            if (koneksi.State != ConnectionState.Open)
-            {
-                koneksi.Open();
-            }
-            try
-            {
-                query = string.Format("update menu set Orders='' where username='{0}'", CustomerTxt.Text);
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                int res = perintah.ExecuteNonQuery();
-
-                PicRefreshFood();
-                Orders.Clear();
-                ds.Clear();
-                adapter.Fill(ds);
-                koneksi.Close();
-
-                if (res == 1)
-                {
-                    Form1_Load(null, null);
-                    MessageBox.Show("Insert data success");
-                }
-                else
-                {
-                    MessageBox.Show("Customer ID doesn't exist, please check the customer table");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-            
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Food Click
-            this.button2.BackColor = Color.Silver;
-            this.button3.BackColor = Color.White;
-
-            this.mieCakalang.Show();
-            this.mieKuah.Show();
-            this.ayamGeprek.Show();
-            this.ayamLalapan.Show();
-            this.nasiGoreng.Show();
-            this.airMineral.Hide();
-            this.nutrisari.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //Drink Click
-            this.button3.BackColor = Color.Silver;
-            this.button2.BackColor = Color.White;
-
-            this.mieCakalang.Hide();
-            this.mieKuah.Hide();
-            this.ayamGeprek.Hide();
-            this.ayamLalapan.Hide();
-            this.nasiGoreng.Hide();
-            this.airMineral.Show();
-            this.nutrisari.Show();
-        }
-
-        private void ResetBtn_Click(object sender, EventArgs e)
-        {
-            PicRefreshFood();
-            Orders.Clear();
         }
 
         private void ListInsert()
@@ -274,9 +222,53 @@ namespace Makanan
                 Orders.Add(choiceFood);
             }
         }
-       
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            ListInsert();
+            sqlUpdate();
+
+            PicRefreshFood();
+            Orders.Clear();
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("update menu set Orders='' where username='{0}'", CustomerTxt.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                int res = perintah.ExecuteNonQuery();
+
+                PicRefreshFood();
+                Orders.Clear();
+                ds.Clear();
+                adapter.Fill(ds);
+                koneksi.Close();
+
+                if (res == 1)
+                {
+                    FoodsControl_Load(null, null);
+                    MessageBox.Show("Insert data success");
+                }
+                else
+                {
+                    MessageBox.Show("Customer ID doesn't exist, please check the customer table");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void ayamlalapanNum_ValueChanged(object sender, EventArgs e)
-        {   
+        {
             amountLalapan = ayamlalapanNum.Value;
             if (amountLalapan == 0)
             {
@@ -343,11 +335,11 @@ namespace Makanan
         private void airNum_ValueChanged(object sender, EventArgs e)
         {
             amountAir = airNum.Value;
-            if(amountAir == 0)
+            if (amountAir == 0)
             {
                 this.airMineral.BackColor = Color.Transparent;
             }
-            else if(amountAir > 0)
+            else if (amountAir > 0)
             {
                 this.airMineral.BackColor = Color.LightYellow;
             }
@@ -364,32 +356,6 @@ namespace Makanan
             {
                 this.nutrisari.BackColor = Color.LightYellow;
             }
-        }
-
-        //Form Customer
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Customer Customer = new Customer();
-            Customer.Show();
-        }
-
-        private void btnTables_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            table table = new table();
-            table.Show();
-        }
-
-        private void btnFoods_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            order order = new order();
-            order.Show();
         }
     }
 }

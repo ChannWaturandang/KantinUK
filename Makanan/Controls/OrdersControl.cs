@@ -1,20 +1,19 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web.ModelBinding;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Makanan
 {
-    public partial class order : Form
+    public partial class OrdersControl : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -28,7 +27,7 @@ namespace Makanan
 
         List<string> Items = new List<string>();
         List<int> Prices = new List<int>();
-        public order()
+        public OrdersControl()
         {
             alamat = "server=localhost; database=kantin; username=root; password=12345;";
             koneksi = new MySqlConnection(alamat);
@@ -36,7 +35,7 @@ namespace Makanan
             InitializeComponent();
         }
 
-        private void order_Load(object sender, EventArgs e)
+        private void OrdersControl_Load(object sender, EventArgs e)
         {
             displayName.Text = "";
             TotalPrice.Text = "Rp. -";
@@ -72,15 +71,6 @@ namespace Makanan
             }
         }
 
-        private void checkButton_Click(object sender, EventArgs e)
-        {
-            Reset();        //Clear Table
-            getCusName();   //Get Customer's Name
-            getCusOrder();  //Get Customer's  Order
-            Inserting();    //Insert into table, data : Items and Price of Orders
-            Total();        //Sum
-        }
-
         //Clear Table
         private void Reset()
         {
@@ -110,6 +100,25 @@ namespace Makanan
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        //Check Customer Order
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            Reset();        //Clear Table
+            getCusName();   //Get Customer's Name
+            getCusOrder();  //Get Customer's  Order
+            Inserting();    //Insert into table, data : Items and Price of Orders
+            Total();        //Sum
+        }
+
+        private void paymentButton_Click(object sender, EventArgs e)
+        {
+            int payment = Convert.ToInt32(paymentBox.Text);
+            txtPayment.Text = "Rp." + paymentBox.Text;
+
+            int payReturn = payment - sum;
+            txtReturn.Text = "Rp." + payReturn.ToString();
         }
 
         //Get customer's name
@@ -222,7 +231,7 @@ namespace Makanan
 
         private void Inserting()
         {
-            for(int i = 0; i < Items.Count; i++)
+            for (int i = 0; i < Items.Count; i++)
             {
                 if (koneksi.State != ConnectionState.Open)
                 {
@@ -250,38 +259,7 @@ namespace Makanan
         private void Total()
         {
             sum = Prices.Sum();
-            TotalPrice.Text = "Rp." + sum; 
-        }
-
-        private void paymentButton_Click(object sender, EventArgs e)
-        {
-
-            int payment = Convert.ToInt32(paymentBox.Text);
-            txtPayment.Text = "Rp." + paymentBox.Text;
-
-            int payReturn = payment - sum;
-            txtReturn.Text = "Rp." + payReturn.ToString();
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Customer Customer = new Customer();
-            Customer.Show();
-        }
-
-        private void btnFoods_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Foods Foods = new Foods();
-            Foods.Show();
-        }
-
-        private void btnTables_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            table table = new table();
-            table.Show();
+            TotalPrice.Text = "Rp." + sum;
         }
     }
 }
