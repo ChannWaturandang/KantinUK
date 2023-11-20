@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Order = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnFoods = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnAbout);
+            this.panel1.Controls.Add(this.Order);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnTables);
             this.panel1.Controls.Add(this.btnCustomer);
@@ -51,19 +53,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 681);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button1
+            // Order
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(34, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 44);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Order";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Order.BackColor = System.Drawing.Color.Teal;
+            this.Order.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Order.ForeColor = System.Drawing.Color.White;
+            this.Order.Location = new System.Drawing.Point(34, 358);
+            this.Order.Name = "Order";
+            this.Order.Size = new System.Drawing.Size(187, 44);
+            this.Order.TabIndex = 6;
+            this.Order.Text = "Order";
+            this.Order.UseVisualStyleBackColor = false;
+            this.Order.Click += new System.EventHandler(this.Order_Click);
             // 
             // label2
             // 
@@ -75,6 +78,7 @@
             this.label2.Size = new System.Drawing.Size(99, 36);
             this.label2.TabIndex = 4;
             this.label2.Text = "Kantin";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnTables
             // 
@@ -122,6 +126,20 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(929, 681);
             this.ControlPanel.TabIndex = 32;
+            this.ControlPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ControlPanel_Paint);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.Teal;
+            this.btnAbout.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.Color.White;
+            this.btnAbout.Location = new System.Drawing.Point(34, 615);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(187, 44);
+            this.btnAbout.TabIndex = 7;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // MainMenu
             // 
@@ -147,11 +165,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Order;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTables;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Button btnFoods;
         private System.Windows.Forms.Panel ControlPanel;
+        private System.Windows.Forms.Button btnAbout;
     }
 }

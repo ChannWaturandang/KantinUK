@@ -48,8 +48,8 @@ namespace Makanan
                         sandi = kolom["password"].ToString();
                         if (sandi == txtPass.Text)
                         {
-                            MainMenu Customer = new MainMenu();
-                            Customer.Show();
+                            FormWelcome formWelcome = new FormWelcome();
+                            formWelcome.Show();
                             this.Hide();
                         }
                         else
@@ -118,6 +118,11 @@ namespace Makanan
             {
                 txtPass.UseSystemPasswordChar = true;
             }
+        }
+
+        private void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
