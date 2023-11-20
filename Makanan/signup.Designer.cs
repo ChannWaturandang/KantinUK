@@ -291,6 +291,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 498);
+            this.ControlBox = false;
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -316,6 +317,7 @@
             this.Controls.Add(this.sBack);
             this.Controls.Add(this.sSignIn);
             this.Name = "signup";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signin";
             this.Load += new System.EventHandler(this.signin_Load);

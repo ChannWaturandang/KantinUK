@@ -33,7 +33,6 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.logoRegister = new System.Windows.Forms.Label();
             this.txtRegis = new System.Windows.Forms.Button();
             this.descRegis = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnLogin_KeyPress);
             // 
             // btnExit
             // 
@@ -74,20 +75,22 @@
             // txtUser
             // 
             this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtUser.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUser.Location = new System.Drawing.Point(69, 181);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(296, 32);
+            this.txtUser.Size = new System.Drawing.Size(296, 31);
             this.txtUser.TabIndex = 4;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPass
             // 
             this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtPass.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPass.Location = new System.Drawing.Point(69, 272);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(296, 32);
+            this.txtPass.Size = new System.Drawing.Size(296, 31);
             this.txtPass.TabIndex = 5;
             this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
@@ -104,25 +107,13 @@
             this.panel1.Size = new System.Drawing.Size(352, 501);
             this.panel1.TabIndex = 6;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(42, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Don\'t have an account? Register one!";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // logoRegister
             // 
             this.logoRegister.AutoSize = true;
             this.logoRegister.BackColor = System.Drawing.Color.Transparent;
             this.logoRegister.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoRegister.ForeColor = System.Drawing.Color.White;
-            this.logoRegister.Location = new System.Drawing.Point(115, 173);
+            this.logoRegister.Location = new System.Drawing.Point(117, 181);
             this.logoRegister.Name = "logoRegister";
             this.logoRegister.Size = new System.Drawing.Size(136, 36);
             this.logoRegister.TabIndex = 11;
@@ -144,11 +135,11 @@
             this.descRegis.AutoSize = true;
             this.descRegis.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descRegis.ForeColor = System.Drawing.Color.White;
-            this.descRegis.Location = new System.Drawing.Point(51, 237);
+            this.descRegis.Location = new System.Drawing.Point(81, 236);
             this.descRegis.Name = "descRegis";
-            this.descRegis.Size = new System.Drawing.Size(269, 17);
+            this.descRegis.Size = new System.Drawing.Size(122, 17);
             this.descRegis.TabIndex = 11;
-            this.descRegis.Text = "Don\'t have an account? Register one!";
+            this.descRegis.Text = "New employee?";
             // 
             // label1
             // 
@@ -218,6 +209,17 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(202, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "SignUp now";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,10 +261,10 @@
         private System.Windows.Forms.Label logoRegister;
         private System.Windows.Forms.Button txtRegis;
         private System.Windows.Forms.Label descRegis;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
