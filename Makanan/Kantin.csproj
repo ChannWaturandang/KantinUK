@@ -59,17 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AboutControl.cs">
+    <Compile Include="NewOrderControls\AddOrderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AboutControl.Designer.cs">
+    <Compile Include="NewOrderControls\AddOrderControl.Designer.cs">
+      <DependentUpon>AddOrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainControls\AboutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainControls\AboutControl.Designer.cs">
       <DependentUpon>AboutControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FoodsControl.cs">
+    <Compile Include="NewOrderControls\FoodsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\FoodsControl.Designer.cs">
+    <Compile Include="NewOrderControls\FoodsControl.Designer.cs">
       <DependentUpon>FoodsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainControls\HistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainControls\HistoryControl.Designer.cs">
+      <DependentUpon>HistoryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
@@ -89,11 +101,17 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\OrdersControl.cs">
+    <Compile Include="NewOrderControls\CheckoutControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\OrdersControl.Designer.cs">
-      <DependentUpon>OrdersControl.cs</DependentUpon>
+    <Compile Include="NewOrderControls\CheckoutControl.Designer.cs">
+      <DependentUpon>CheckoutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewOrderControls\NewCusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewOrderControls\NewCusControl.Designer.cs">
+      <DependentUpon>NewCusControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,23 +121,23 @@
     <Compile Include="signup.Designer.cs">
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomerControl.cs">
+    <Compile Include="MainControls\TableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CustomerControl.Designer.cs">
-      <DependentUpon>CustomerControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TableControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\TableControl.Designer.cs">
+    <Compile Include="MainControls\TableControl.Designer.cs">
       <DependentUpon>TableControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\AboutControl.resx">
+    <EmbeddedResource Include="MainControls\AboutControl.resx">
       <DependentUpon>AboutControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FoodsControl.resx">
+    <EmbeddedResource Include="NewOrderControls\AddOrderControl.resx">
+      <DependentUpon>AddOrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewOrderControls\FoodsControl.resx">
       <DependentUpon>FoodsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainControls\HistoryControl.resx">
+      <DependentUpon>HistoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
@@ -127,14 +145,14 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustomerControl.resx">
-      <DependentUpon>CustomerControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\OrdersControl.resx">
-      <DependentUpon>OrdersControl.cs</DependentUpon>
+    <EmbeddedResource Include="NewOrderControls\CheckoutControl.resx">
+      <DependentUpon>CheckoutControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewOrderControls\NewCusControl.resx">
+      <DependentUpon>NewCusControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -149,7 +167,7 @@
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TableControl.resx">
+    <EmbeddedResource Include="MainControls\TableControl.resx">
       <DependentUpon>TableControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

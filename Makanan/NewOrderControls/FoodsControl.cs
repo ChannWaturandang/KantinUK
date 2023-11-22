@@ -1,70 +1,59 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using Makanan.NewOrderControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Makanan
 {
     public partial class FoodsControl : UserControl
     {
-        private MySqlConnection koneksi;
-        private MySqlDataAdapter adapter;
-        private MySqlCommand perintah;
+        private DataTable orderTable = new DataTable();
 
-        private DataSet ds = new DataSet();
-        private string alamat, query;
+        string orderPrice, foodChoice, Order;
+        public static decimal total = 0;
+        decimal price, amountLalapan, amountGeprek, amountNasiGoreng, amountMieKuah, amountMieCakalang, amountAir, amountNutri;
 
-        string orderPrice, choiceFood, choiceDrink;
-        decimal price;
-        decimal amountLalapan, amountGeprek, amountNasiGoreng, amountMieKuah, amountMieCakalang, amountAir, amountNutri;
-        List<string> Orders = new List<string>();
+        public static List<string> OrderList = new List<string>();
+        public static string combinedString;
         public FoodsControl()
         {
-            alamat = "server=localhost; database=Kantin; username=root; password=12345;";
-            koneksi = new MySqlConnection(alamat);
             this.Font = new Font("Times New Roman", 14, FontStyle.Regular);
-
             InitializeComponent();
         }
 
         private void FoodsControl_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                koneksi.Open();
-                query = string.Format("Select username, Orders, Table_Num from menu");
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                perintah.ExecuteNonQuery();
-                ds.Clear();
-                adapter.Fill(ds);
-                koneksi.Close();
-
-                dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[0].Width = 30;
-                dataGridView1.Columns[0].HeaderText = "Customer name";
-                dataGridView1.Columns[1].Width = 100;
-                dataGridView1.Columns[1].HeaderText = "Orders";
-                dataGridView1.Columns[2].Width = 100;
-                dataGridView1.Columns[2].HeaderText = "Table Num";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+        { 
+            timer1.Start();
+            InitializeDataGridView();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            //Food Click
-            this.button2.BackColor = Color.Silver;
-            this.button3.BackColor = Color.White;
+            Customer_Lbl.Text = NewCusControl.cusName + "'s Orders :";
+        }
+
+        private void InitializeDataGridView()
+        {
+            orderTable.Reset();
+            // Create a orderTable with columns
+            orderTable.Columns.Add("Item", typeof(string));
+            orderTable.Columns.Add("Price", typeof(string));
+
+            // Set the DataGridView's DataSource to the orderTable
+            OrderDisplay.DataSource = orderTable;
+        }
+
+        //------Buttons------\\
+        private void btnFoodFilter_Click(object sender, EventArgs e)
+        {
+            //Food Filter Click
+            this.btnFoodFilter.BackColor = Color.Silver;
+            this.btnDrinkFilter.BackColor = Color.White;
             Searchbox.Text = "";
 
             this.mieCakalang.Show();
@@ -72,15 +61,16 @@ namespace Makanan
             this.ayamGeprek.Show();
             this.ayamLalapan.Show();
             this.nasiGoreng.Show();
+
             this.airMineral.Hide();
             this.nutrisari.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnDrinkFilter_Click(object sender, EventArgs e)
         {
-            //Drink Click
-            this.button3.BackColor = Color.Silver;
-            this.button2.BackColor = Color.White;
+            //Drink Filter Click
+            this.btnDrinkFilter.BackColor = Color.Silver;
+            this.btnFoodFilter.BackColor = Color.White;
             Searchbox.Text = "";
 
             this.mieCakalang.Hide();
@@ -88,15 +78,21 @@ namespace Makanan
             this.ayamGeprek.Hide();
             this.ayamLalapan.Hide();
             this.nasiGoreng.Hide();
+
             this.airMineral.Show();
             this.nutrisari.Show();
             
         }
 
+        private void ResetBtn_Click(object sender, EventArgs e)
+        {
+            PicRefreshFood();
+        }
+
         private void Searchbox_TextChanged(object sender, EventArgs e)
         {
-            button2.BackColor = Color.White;
-            button3.BackColor = Color.White;
+            btnFoodFilter.BackColor = Color.White;
+            btnDrinkFilter.BackColor = Color.White;
             foreach (Control item in FoodDisplay.Controls)
             {
                 item.Show();
@@ -110,12 +106,6 @@ namespace Makanan
                     item.Hide();
                 }
             }
-        }
-
-        private void ResetBtn_Click(object sender, EventArgs e)
-        {
-            PicRefreshFood();
-            Orders.Clear();
         }
 
         public void PicRefreshFood()
@@ -134,39 +124,6 @@ namespace Makanan
             }
         }
 
-        private void sqlUpdate()
-        {
-            if (koneksi.State != ConnectionState.Open)
-            {
-                koneksi.Open();
-            }
-            try
-            {
-                string combinedString = string.Join(" + ", Orders.ToArray());
-
-                query = string.Format("update menu set Orders='{1}' where username='{0}'", CustomerTxt.Text, combinedString);
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                perintah.ExecuteNonQuery();
-                int res = perintah.ExecuteNonQuery();
-                koneksi.Close();
-
-                if (res == 1)
-                {
-                    MessageBox.Show("Added :" + combinedString);
-                    FoodsControl_Load(null, null);
-                }
-                else
-                {
-                    MessageBox.Show("Customer doesn't exist, please check again!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
         private void ListInsert()
         {
             //Foods
@@ -174,36 +131,61 @@ namespace Makanan
             {
                 price = 18000 * amountLalapan;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Ayam Lalapan x{0}, {1}", amountLalapan, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Ayam Lalapan x" + amountLalapan;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
             if (amountGeprek > 0)
             {
                 price = 15000 * amountGeprek;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Ayam Geprek x{0}, {1}", amountGeprek, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Ayam Geprek x" + amountGeprek;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
             if (amountNasiGoreng > 0)
             {
                 price = 15000 * amountNasiGoreng;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Nasi Goreng x{0}, {1}", amountNasiGoreng, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Nasi Goreng x" + amountNasiGoreng;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
             if (amountMieKuah > 0)
             {
                 price = 10000 * amountMieKuah;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Mie Kuah x{0}, {1}", amountMieKuah, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Mie Kuah x" + amountMieKuah;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
             if (amountMieCakalang > 0)
             {
                 price = 12000 * amountMieCakalang;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Mie Cakalang x{0}, {1}", amountMieCakalang, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Mie Cakalang x" + amountMieCakalang;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
 
             //Drinks
@@ -211,62 +193,49 @@ namespace Makanan
             {
                 price = 5000 * amountAir;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Air Mineral x{0}, {1}", amountAir, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Air Mineral x" + amountAir;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
             if (amountNutri > 0)
             {
                 price = 5000 * amountNutri;
                 orderPrice = "Rp." + price;
-                choiceFood = string.Format("Nutri Sari x{0}, {1}", amountNutri, orderPrice);
-                Orders.Add(choiceFood);
+                foodChoice = "Nutri Sari x" + amountNutri;
+                orderTable.Rows.Add(foodChoice, orderPrice);
+                CheckoutControl.receiptTable.Rows.Add(foodChoice, orderPrice);
+
+                total += price;
+                Order = string.Format("{0} {1}", foodChoice, orderPrice);
+                OrderList.Add(Order);
             }
+        }
+
+        private void ClearTable_Click(object sender, EventArgs e)
+        {
+            orderTable.Clear();
+            CheckoutControl.receiptTable.Clear();
+            OrderList.Clear();
+            total = 0;
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             ListInsert();
-            sqlUpdate();
-
+            combinedString = string.Join(" + ", OrderList);
             PicRefreshFood();
-            Orders.Clear();
         }
 
-        private void Clear_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            if (koneksi.State != ConnectionState.Open)
-            {
-                koneksi.Open();
-            }
-            try
-            {
-                query = string.Format("update menu set Orders='' where username='{0}'", CustomerTxt.Text);
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                int res = perintah.ExecuteNonQuery();
-
-                PicRefreshFood();
-                Orders.Clear();
-                ds.Clear();
-                adapter.Fill(ds);
-                koneksi.Close();
-
-                if (res == 1)
-                {
-                    FoodsControl_Load(null, null);
-                    MessageBox.Show("Insert data success");
-                }
-                else
-                {
-                    MessageBox.Show("Customer ID doesn't exist, please check the customer table");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            AddOrderControl.movetoCheckout = true;
         }
 
+        //------NumBox------\\
         private void ayamlalapanNum_ValueChanged(object sender, EventArgs e)
         {
             amountLalapan = ayamlalapanNum.Value;

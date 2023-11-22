@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodsControl));
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDrinkFilter = new System.Windows.Forms.Button();
+            this.btnFoodFilter = new System.Windows.Forms.Button();
             this.Searchlabel = new System.Windows.Forms.Label();
             this.Searchbox = new System.Windows.Forms.TextBox();
-            this.CustomerTxt = new System.Windows.Forms.TextBox();
             this.FoodDisplay = new System.Windows.Forms.FlowLayoutPanel();
             this.mieCakalang = new System.Windows.Forms.GroupBox();
             this.miecakalangNum = new System.Windows.Forms.NumericUpDown();
@@ -64,11 +64,13 @@
             this.idAyamLalapan = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ResetBtn = new System.Windows.Forms.Button();
-            this.Clear = new System.Windows.Forms.Button();
+            this.ClearTable = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.Customer_Lbl = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.OrderDisplay = new System.Windows.Forms.DataGridView();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.FoodDisplay.SuspendLayout();
             this.mieCakalang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.miecakalangNum)).BeginInit();
@@ -91,55 +93,49 @@
             this.ayamLalapan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ayamlalapanNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idAyamLalapan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderDisplay)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // btnDrinkFilter
             // 
-            this.button3.Location = new System.Drawing.Point(160, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 37);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Drink";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDrinkFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrinkFilter.Location = new System.Drawing.Point(155, 71);
+            this.btnDrinkFilter.Name = "btnDrinkFilter";
+            this.btnDrinkFilter.Size = new System.Drawing.Size(107, 39);
+            this.btnDrinkFilter.TabIndex = 38;
+            this.btnDrinkFilter.Text = "Drink";
+            this.btnDrinkFilter.UseVisualStyleBackColor = true;
+            this.btnDrinkFilter.Click += new System.EventHandler(this.btnDrinkFilter_Click);
             // 
-            // button2
+            // btnFoodFilter
             // 
-            this.button2.Location = new System.Drawing.Point(57, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 37);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Food";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnFoodFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoodFilter.Location = new System.Drawing.Point(39, 71);
+            this.btnFoodFilter.Name = "btnFoodFilter";
+            this.btnFoodFilter.Size = new System.Drawing.Size(107, 39);
+            this.btnFoodFilter.TabIndex = 37;
+            this.btnFoodFilter.Text = "Food";
+            this.btnFoodFilter.UseVisualStyleBackColor = true;
+            this.btnFoodFilter.Click += new System.EventHandler(this.btnFoodFilter_Click);
             // 
             // Searchlabel
             // 
             this.Searchlabel.AutoSize = true;
-            this.Searchlabel.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchlabel.Location = new System.Drawing.Point(479, 68);
+            this.Searchlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searchlabel.Location = new System.Drawing.Point(285, 81);
             this.Searchlabel.Name = "Searchlabel";
-            this.Searchlabel.Size = new System.Drawing.Size(56, 17);
+            this.Searchlabel.Size = new System.Drawing.Size(61, 18);
             this.Searchlabel.TabIndex = 33;
             this.Searchlabel.Text = "Search";
             // 
             // Searchbox
             // 
             this.Searchbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchbox.Location = new System.Drawing.Point(273, 64);
+            this.Searchbox.Location = new System.Drawing.Point(352, 78);
             this.Searchbox.Name = "Searchbox";
             this.Searchbox.Size = new System.Drawing.Size(200, 24);
             this.Searchbox.TabIndex = 32;
             this.Searchbox.TextChanged += new System.EventHandler(this.Searchbox_TextChanged);
-            // 
-            // CustomerTxt
-            // 
-            this.CustomerTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerTxt.Location = new System.Drawing.Point(57, 460);
-            this.CustomerTxt.Name = "CustomerTxt";
-            this.CustomerTxt.Size = new System.Drawing.Size(199, 24);
-            this.CustomerTxt.TabIndex = 35;
             // 
             // FoodDisplay
             // 
@@ -152,11 +148,11 @@
             this.FoodDisplay.Controls.Add(this.nasiGoreng);
             this.FoodDisplay.Controls.Add(this.mieKuah);
             this.FoodDisplay.Controls.Add(this.ayamLalapan);
-            this.FoodDisplay.Location = new System.Drawing.Point(57, 98);
+            this.FoodDisplay.Location = new System.Drawing.Point(39, 115);
             this.FoodDisplay.Margin = new System.Windows.Forms.Padding(5);
             this.FoodDisplay.Name = "FoodDisplay";
             this.FoodDisplay.Padding = new System.Windows.Forms.Padding(10);
-            this.FoodDisplay.Size = new System.Drawing.Size(807, 316);
+            this.FoodDisplay.Size = new System.Drawing.Size(517, 431);
             this.FoodDisplay.TabIndex = 31;
             // 
             // mieCakalang
@@ -296,7 +292,7 @@
             this.airMineral.Controls.Add(this.airNum);
             this.airMineral.Controls.Add(this.label10);
             this.airMineral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.airMineral.Location = new System.Drawing.Point(466, 13);
+            this.airMineral.Location = new System.Drawing.Point(13, 179);
             this.airMineral.Name = "airMineral";
             this.airMineral.Size = new System.Drawing.Size(145, 160);
             this.airMineral.TabIndex = 27;
@@ -339,7 +335,7 @@
             this.nasiGoreng.Controls.Add(this.label6);
             this.nasiGoreng.Controls.Add(this.idNasiGoreng);
             this.nasiGoreng.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nasiGoreng.Location = new System.Drawing.Point(617, 13);
+            this.nasiGoreng.Location = new System.Drawing.Point(164, 179);
             this.nasiGoreng.Name = "nasiGoreng";
             this.nasiGoreng.Size = new System.Drawing.Size(145, 160);
             this.nasiGoreng.TabIndex = 27;
@@ -382,7 +378,7 @@
             this.mieKuah.Controls.Add(this.label9);
             this.mieKuah.Controls.Add(this.idMieKuah);
             this.mieKuah.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mieKuah.Location = new System.Drawing.Point(13, 179);
+            this.mieKuah.Location = new System.Drawing.Point(315, 179);
             this.mieKuah.Name = "mieKuah";
             this.mieKuah.Size = new System.Drawing.Size(145, 160);
             this.mieKuah.TabIndex = 27;
@@ -426,7 +422,7 @@
             this.ayamLalapan.Controls.Add(this.idAyamLalapan);
             this.ayamLalapan.Controls.Add(this.label8);
             this.ayamLalapan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ayamLalapan.Location = new System.Drawing.Point(164, 179);
+            this.ayamLalapan.Location = new System.Drawing.Point(13, 345);
             this.ayamLalapan.Name = "ayamLalapan";
             this.ayamLalapan.Size = new System.Drawing.Size(145, 160);
             this.ayamLalapan.TabIndex = 26;
@@ -466,23 +462,25 @@
             // 
             // ResetBtn
             // 
-            this.ResetBtn.Location = new System.Drawing.Point(771, 441);
+            this.ResetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetBtn.Location = new System.Drawing.Point(336, 554);
             this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(93, 36);
+            this.ResetBtn.Size = new System.Drawing.Size(107, 39);
             this.ResetBtn.TabIndex = 36;
             this.ResetBtn.Text = "Reset";
             this.ResetBtn.UseVisualStyleBackColor = true;
             this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
-            // Clear
+            // ClearTable
             // 
-            this.Clear.Location = new System.Drawing.Point(379, 445);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(94, 39);
-            this.Clear.TabIndex = 30;
-            this.Clear.Text = "Clear Order";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            this.ClearTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearTable.Location = new System.Drawing.Point(583, 556);
+            this.ClearTable.Name = "ClearTable";
+            this.ClearTable.Size = new System.Drawing.Size(107, 37);
+            this.ClearTable.TabIndex = 30;
+            this.ClearTable.Text = "Clear Order";
+            this.ClearTable.UseVisualStyleBackColor = true;
+            this.ClearTable.Click += new System.EventHandler(this.ClearTable_Click);
             // 
             // label1
             // 
@@ -490,7 +488,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(14, 5);
+            this.label1.Location = new System.Drawing.Point(20, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 46);
             this.label1.TabIndex = 28;
@@ -498,9 +496,10 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Location = new System.Drawing.Point(277, 445);
+            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.Location = new System.Drawing.Point(449, 554);
             this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(94, 39);
+            this.UpdateBtn.Size = new System.Drawing.Size(107, 39);
             this.UpdateBtn.TabIndex = 29;
             this.UpdateBtn.Text = "Add Order";
             this.UpdateBtn.UseVisualStyleBackColor = true;
@@ -509,41 +508,58 @@
             // Customer_Lbl
             // 
             this.Customer_Lbl.AutoSize = true;
-            this.Customer_Lbl.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Customer_Lbl.Location = new System.Drawing.Point(57, 438);
+            this.Customer_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customer_Lbl.Location = new System.Drawing.Point(579, 82);
             this.Customer_Lbl.Name = "Customer_Lbl";
-            this.Customer_Lbl.Size = new System.Drawing.Size(122, 17);
+            this.Customer_Lbl.Size = new System.Drawing.Size(137, 20);
             this.Customer_Lbl.TabIndex = 34;
             this.Customer_Lbl.Text = "Customer Name";
             // 
-            // dataGridView1
+            // OrderDisplay
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 490);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(807, 175);
-            this.dataGridView1.TabIndex = 27;
-            this.dataGridView1.TabStop = false;
+            this.OrderDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.OrderDisplay.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.OrderDisplay.Location = new System.Drawing.Point(583, 115);
+            this.OrderDisplay.Name = "OrderDisplay";
+            this.OrderDisplay.Size = new System.Drawing.Size(258, 431);
+            this.OrderDisplay.TabIndex = 27;
+            this.OrderDisplay.TabStop = false;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Turquoise;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(734, 556);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(107, 37);
+            this.btnNext.TabIndex = 39;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FoodsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnDrinkFilter);
+            this.Controls.Add(this.btnFoodFilter);
             this.Controls.Add(this.Searchlabel);
             this.Controls.Add(this.Searchbox);
-            this.Controls.Add(this.CustomerTxt);
             this.Controls.Add(this.FoodDisplay);
             this.Controls.Add(this.ResetBtn);
-            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.ClearTable);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.Customer_Lbl);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.OrderDisplay);
+            this.DoubleBuffered = true;
             this.Name = "FoodsControl";
-            this.Size = new System.Drawing.Size(929, 681);
+            this.Size = new System.Drawing.Size(930, 670);
             this.Load += new System.EventHandler(this.FoodsControl_Load);
             this.FoodDisplay.ResumeLayout(false);
             this.mieCakalang.ResumeLayout(false);
@@ -567,7 +583,7 @@
             this.ayamLalapan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ayamlalapanNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idAyamLalapan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,11 +591,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDrinkFilter;
+        private System.Windows.Forms.Button btnFoodFilter;
         private System.Windows.Forms.Label Searchlabel;
         private System.Windows.Forms.TextBox Searchbox;
-        private System.Windows.Forms.TextBox CustomerTxt;
         private System.Windows.Forms.FlowLayoutPanel FoodDisplay;
         private System.Windows.Forms.GroupBox mieCakalang;
         private System.Windows.Forms.NumericUpDown miecakalangNum;
@@ -610,10 +625,12 @@
         private System.Windows.Forms.PictureBox idAyamLalapan;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ResetBtn;
-        private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button ClearTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Label Customer_Lbl;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView OrderDisplay;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Timer timer1;
     }
 }
