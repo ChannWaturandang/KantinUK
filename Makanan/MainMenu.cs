@@ -1,4 +1,5 @@
 ﻿using Makanan.Controls;
+using Makanan.NewOrderControls;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -16,7 +17,10 @@ namespace Makanan
 {
     public partial class MainMenu : Form
     {
-        private object btnOrder;
+        private UserControl addOrderControl = new AddOrderControl();
+        private UserControl historyControl = new HistoryControl();
+        private UserControl tableControl = new TableControl();
+        private UserControl aboutControl = new AboutControl();
 
         public MainMenu()
         {
@@ -27,104 +31,59 @@ namespace Makanan
 
         private void Customer_Load(object sender, EventArgs e)
         {
-           btnCustomer_Click(sender, e);
+            btnCustomer_Click(null, null);
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
-                btnCustomer.ForeColor = Color.LightYellow;
-                this.ControlPanel.Controls.Clear();
-                CustomerControl customerControl = new CustomerControl();
-                ControlPanel.Controls.Add(customerControl);
+            btnNewOrder.ForeColor = Color.LightYellow;
 
-                btnFoods.ForeColor = Color.White;
-                btnTables.ForeColor = Color.White;
-                Order.ForeColor = Color.White;
-                btnAbout.ForeColor = Color.White;
-            }
+            this.ControlPanel.Controls.Clear();
+            ControlPanel.Controls.Add(addOrderControl);
+
+            btnHistory.ForeColor = Color.Black;
+            btnTables.ForeColor = Color.Black;
+            btnAbout.ForeColor = Color.Black;
         }
 
 
-        private void btnFoods_Click(object sender, EventArgs e)
+        private void btnHistory_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
-                this.btnFoods.ForeColor = Color.LightYellow;
-                this.ControlPanel.Controls.Clear();
-                FoodsControl foodsControl = new FoodsControl();
-                ControlPanel.Controls.Add(foodsControl);
 
-                btnCustomer.ForeColor = Color.White;
-                btnTables.ForeColor = Color.White;
-                Order.ForeColor = Color.White;
-                btnAbout.ForeColor = Color.White;
-            }
+            this.btnHistory.ForeColor = Color.LightYellow;
+            this.ControlPanel.Controls.Clear();
+            ControlPanel.Controls.Add(historyControl);
 
-
+            btnNewOrder.ForeColor = Color.Black;
+            btnTables.ForeColor = Color.Black;
+            btnAbout.ForeColor = Color.Black;
         }
 
         private void btnTables_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
-                btnTables.ForeColor = Color.LightYellow;
-                this.ControlPanel.Controls.Clear();
-                TableControl tableControl = new TableControl();
-                ControlPanel.Controls.Add(tableControl);
+            btnTables.ForeColor = Color.LightYellow;
+            this.ControlPanel.Controls.Clear();
+            ControlPanel.Controls.Add(tableControl);
 
-                btnCustomer.ForeColor = Color.White;
-                btnFoods.ForeColor = Color.White;
-                Order.ForeColor = Color.White;
-                btnAbout.ForeColor = Color.White;
-            }
-        }
-
-        private void Order_Click(object sender, EventArgs e)
-        {
-            if (true)
-            {
-                Order.ForeColor = Color.LightYellow;
-                this.ControlPanel.Controls.Clear();
-                OrdersControl ordersControl = new OrdersControl();
-                ControlPanel.Controls.Add(ordersControl);
-
-                btnCustomer.ForeColor = Color.White;
-                btnFoods.ForeColor = Color.White;
-                btnTables.ForeColor = Color.White;
-                btnAbout.ForeColor = Color.White;
-            }
-        }
-
-        private void ControlPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            btnNewOrder.ForeColor = Color.Black;
+            btnHistory.ForeColor = Color.Black;
+            btnAbout.ForeColor = Color.Black;
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
-                btnAbout.ForeColor = Color.LightYellow;
-                this.ControlPanel.Controls.Clear();
-                AboutControl aboutControl = new AboutControl();
-                ControlPanel.Controls.Add(aboutControl);
-                btnCustomer.ForeColor = Color.White;
-                btnFoods.ForeColor = Color.White;
-                btnTables.ForeColor = Color.White;
-                Order.ForeColor = Color.White;
-            }
+            btnAbout.ForeColor = Color.LightYellow;
+            this.ControlPanel.Controls.Clear();
+            ControlPanel.Controls.Add(aboutControl);
+
+            btnNewOrder.ForeColor = Color.Black;
+            btnHistory.ForeColor = Color.Black;
+            btnTables.ForeColor = Color.Black;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 };

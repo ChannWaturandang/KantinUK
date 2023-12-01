@@ -49,9 +49,9 @@
             this.sLast = new System.Windows.Forms.TextBox();
             this.sFirst = new System.Windows.Forms.TextBox();
             this.sUsername = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.sBack = new System.Windows.Forms.Button();
             this.sSignIn = new System.Windows.Forms.Button();
+            this.adminLogo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -253,21 +253,10 @@
             this.sUsername.Size = new System.Drawing.Size(148, 26);
             this.sUsername.TabIndex = 47;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(57, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(738, 49);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Sign Up";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // sBack
             // 
             this.sBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.sBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sBack.Location = new System.Drawing.Point(71, 411);
             this.sBack.Name = "sBack";
             this.sBack.Size = new System.Drawing.Size(95, 36);
@@ -278,13 +267,28 @@
             // 
             // sSignIn
             // 
+            this.sSignIn.BackColor = System.Drawing.Color.Red;
+            this.sSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sSignIn.ForeColor = System.Drawing.Color.White;
             this.sSignIn.Location = new System.Drawing.Point(685, 411);
             this.sSignIn.Name = "sSignIn";
             this.sSignIn.Size = new System.Drawing.Size(95, 36);
             this.sSignIn.TabIndex = 44;
             this.sSignIn.Text = "SignIn";
-            this.sSignIn.UseVisualStyleBackColor = true;
+            this.sSignIn.UseVisualStyleBackColor = false;
             this.sSignIn.Click += new System.EventHandler(this.sSignIn_Click);
+            // 
+            // adminLogo
+            // 
+            this.adminLogo.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.adminLogo.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLogo.ForeColor = System.Drawing.Color.White;
+            this.adminLogo.Location = new System.Drawing.Point(2, -2);
+            this.adminLogo.Name = "adminLogo";
+            this.adminLogo.Size = new System.Drawing.Size(853, 66);
+            this.adminLogo.TabIndex = 68;
+            this.adminLogo.Text = "SignUp";
+            this.adminLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // signup
             // 
@@ -292,6 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 498);
             this.ControlBox = false;
+            this.Controls.Add(this.adminLogo);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -313,7 +318,6 @@
             this.Controls.Add(this.sLast);
             this.Controls.Add(this.sFirst);
             this.Controls.Add(this.sUsername);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.sBack);
             this.Controls.Add(this.sSignIn);
             this.Name = "signup";
@@ -349,8 +353,8 @@
         private System.Windows.Forms.TextBox sLast;
         private System.Windows.Forms.TextBox sFirst;
         private System.Windows.Forms.TextBox sUsername;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button sBack;
         private System.Windows.Forms.Button sSignIn;
+        private System.Windows.Forms.Label adminLogo;
     }
 }

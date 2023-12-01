@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Makanan.Controls
+namespace Makanan
 {
-    public partial class AboutControl : UserControl
+    public partial class struk : Form
     {
-        public AboutControl()
+        public struk()
         {
             InitializeComponent();
+        }
+
+
+        private void crystalReportViewer1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
