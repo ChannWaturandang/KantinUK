@@ -65,12 +65,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ResetBtn = new System.Windows.Forms.Button();
             this.ClearTable = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.Customer_Lbl = new System.Windows.Forms.Label();
             this.OrderDisplay = new System.Windows.Forms.DataGridView();
             this.btnNext = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.adminLogo = new System.Windows.Forms.Label();
             this.FoodDisplay.SuspendLayout();
             this.mieCakalang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.miecakalangNum)).BeginInit();
@@ -482,18 +482,6 @@
             this.ClearTable.UseVisualStyleBackColor = true;
             this.ClearTable.Click += new System.EventHandler(this.ClearTable_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(20, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 46);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Menu";
-            // 
             // UpdateBtn
             // 
             this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -521,7 +509,7 @@
             this.OrderDisplay.BackgroundColor = System.Drawing.SystemColors.Window;
             this.OrderDisplay.Location = new System.Drawing.Point(583, 115);
             this.OrderDisplay.Name = "OrderDisplay";
-            this.OrderDisplay.Size = new System.Drawing.Size(258, 431);
+            this.OrderDisplay.Size = new System.Drawing.Size(296, 431);
             this.OrderDisplay.TabIndex = 27;
             this.OrderDisplay.TabStop = false;
             // 
@@ -529,7 +517,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.Turquoise;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(734, 556);
+            this.btnNext.Location = new System.Drawing.Point(772, 556);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(107, 37);
             this.btnNext.TabIndex = 39;
@@ -541,10 +529,23 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // adminLogo
+            // 
+            this.adminLogo.BackColor = System.Drawing.Color.Transparent;
+            this.adminLogo.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLogo.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.adminLogo.Location = new System.Drawing.Point(0, 0);
+            this.adminLogo.Name = "adminLogo";
+            this.adminLogo.Size = new System.Drawing.Size(930, 66);
+            this.adminLogo.TabIndex = 41;
+            this.adminLogo.Text = "Menu";
+            this.adminLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FoodsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.adminLogo);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnDrinkFilter);
             this.Controls.Add(this.btnFoodFilter);
@@ -553,7 +554,6 @@
             this.Controls.Add(this.FoodDisplay);
             this.Controls.Add(this.ResetBtn);
             this.Controls.Add(this.ClearTable);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.Customer_Lbl);
             this.Controls.Add(this.OrderDisplay);
@@ -626,11 +626,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ResetBtn;
         private System.Windows.Forms.Button ClearTable;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Label Customer_Lbl;
         private System.Windows.Forms.DataGridView OrderDisplay;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label adminLogo;
     }
 }

@@ -41,9 +41,9 @@ namespace Makanan
             this.ControlPanel.Controls.Clear();
             ControlPanel.Controls.Add(addOrderControl);
 
-            btnHistory.ForeColor = Color.White;
-            btnTables.ForeColor = Color.White;
-            btnAbout.ForeColor = Color.White;
+            btnHistory.ForeColor = Color.Black;
+            btnTables.ForeColor = Color.Black;
+            btnAbout.ForeColor = Color.Black;
         }
 
 
@@ -54,9 +54,9 @@ namespace Makanan
             this.ControlPanel.Controls.Clear();
             ControlPanel.Controls.Add(historyControl);
 
-            btnNewOrder.ForeColor = Color.White;
-            btnTables.ForeColor = Color.White;
-            btnAbout.ForeColor = Color.White;
+            btnNewOrder.ForeColor = Color.Black;
+            btnTables.ForeColor = Color.Black;
+            btnAbout.ForeColor = Color.Black;
         }
 
         private void btnTables_Click(object sender, EventArgs e)
@@ -65,9 +65,9 @@ namespace Makanan
             this.ControlPanel.Controls.Clear();
             ControlPanel.Controls.Add(tableControl);
 
-            btnNewOrder.ForeColor = Color.White;
-            btnHistory.ForeColor = Color.White;
-            btnAbout.ForeColor = Color.White;
+            btnNewOrder.ForeColor = Color.Black;
+            btnHistory.ForeColor = Color.Black;
+            btnAbout.ForeColor = Color.Black;
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
@@ -76,9 +76,9 @@ namespace Makanan
             this.ControlPanel.Controls.Clear();
             ControlPanel.Controls.Add(aboutControl);
 
-            btnNewOrder.ForeColor = Color.White;
-            btnHistory.ForeColor = Color.White;
-            btnTables.ForeColor = Color.White;
+            btnNewOrder.ForeColor = Color.Black;
+            btnHistory.ForeColor = Color.Black;
+            btnTables.ForeColor = Color.Black;
         }
 
         private void button1_Click(object sender, EventArgs e)

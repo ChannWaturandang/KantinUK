@@ -43,13 +43,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnAbout);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnTables);
             this.panel1.Controls.Add(this.btnNewOrder);
             this.panel1.Controls.Add(this.btnHistory);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnExit
@@ -63,42 +64,43 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.Teal;
+            this.btnAbout.BackColor = System.Drawing.Color.LightSeaGreen;
             resources.ApplyResources(this.btnAbout, "btnAbout");
-            this.btnAbout.ForeColor = System.Drawing.Color.White;
+            this.btnAbout.ForeColor = System.Drawing.Color.Black;
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Name = "label2";
             // 
             // btnTables
             // 
-            this.btnTables.BackColor = System.Drawing.Color.Teal;
+            this.btnTables.BackColor = System.Drawing.Color.LightSeaGreen;
             resources.ApplyResources(this.btnTables, "btnTables");
-            this.btnTables.ForeColor = System.Drawing.Color.White;
+            this.btnTables.ForeColor = System.Drawing.Color.Black;
             this.btnTables.Name = "btnTables";
             this.btnTables.UseVisualStyleBackColor = false;
             this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnNewOrder
             // 
-            this.btnNewOrder.BackColor = System.Drawing.Color.Teal;
+            this.btnNewOrder.BackColor = System.Drawing.Color.LightSeaGreen;
             resources.ApplyResources(this.btnNewOrder, "btnNewOrder");
-            this.btnNewOrder.ForeColor = System.Drawing.Color.LightYellow;
+            this.btnNewOrder.ForeColor = System.Drawing.Color.Black;
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.UseVisualStyleBackColor = false;
             this.btnNewOrder.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnHistory
             // 
-            this.btnHistory.BackColor = System.Drawing.Color.Teal;
+            this.btnHistory.BackColor = System.Drawing.Color.LightSeaGreen;
             resources.ApplyResources(this.btnHistory, "btnHistory");
-            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.ForeColor = System.Drawing.Color.Black;
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.UseVisualStyleBackColor = false;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);

@@ -50,14 +50,14 @@
             // 
             // adminLogo
             // 
-            this.adminLogo.AutoSize = true;
             this.adminLogo.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminLogo.ForeColor = System.Drawing.Color.Teal;
-            this.adminLogo.Location = new System.Drawing.Point(15, 20);
+            this.adminLogo.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.adminLogo.Location = new System.Drawing.Point(0, 0);
             this.adminLogo.Name = "adminLogo";
-            this.adminLogo.Size = new System.Drawing.Size(111, 46);
+            this.adminLogo.Size = new System.Drawing.Size(930, 66);
             this.adminLogo.TabIndex = 40;
             this.adminLogo.Text = "Order";
+            this.adminLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // paymentButton
             // 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adminLogo = new System.Windows.Forms.Label();
             this.KASIR = new System.Windows.Forms.Label();
             this.E3 = new System.Windows.Forms.Label();
             this.E4 = new System.Windows.Forms.Label();
@@ -48,19 +47,8 @@
             this.A2 = new System.Windows.Forms.Label();
             this.A1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // adminLogo
-            // 
-            this.adminLogo.AutoSize = true;
-            this.adminLogo.BackColor = System.Drawing.Color.Transparent;
-            this.adminLogo.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminLogo.ForeColor = System.Drawing.Color.Teal;
-            this.adminLogo.Location = new System.Drawing.Point(40, 20);
-            this.adminLogo.Name = "adminLogo";
-            this.adminLogo.Size = new System.Drawing.Size(125, 46);
-            this.adminLogo.TabIndex = 76;
-            this.adminLogo.Text = "Tables";
             // 
             // KASIR
             // 
@@ -283,20 +271,31 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(197, 146);
+            this.label2.Location = new System.Drawing.Point(198, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(327, 70);
             this.label2.TabIndex = 151;
             this.label2.Text = "Bakery";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(950, 66);
+            this.label1.TabIndex = 152;
+            this.label1.Text = "Tables";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TableControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.adminLogo);
             this.Controls.Add(this.KASIR);
             this.Controls.Add(this.E3);
             this.Controls.Add(this.E4);
@@ -319,13 +318,10 @@
             this.Size = new System.Drawing.Size(950, 720);
             this.Load += new System.EventHandler(this.TableControl_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label adminLogo;
         private System.Windows.Forms.Label KASIR;
         private System.Windows.Forms.Label E3;
         private System.Windows.Forms.Label E4;
@@ -345,5 +341,6 @@
         private System.Windows.Forms.Label A2;
         private System.Windows.Forms.Label A1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

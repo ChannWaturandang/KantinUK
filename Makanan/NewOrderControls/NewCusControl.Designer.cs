@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adminLogo = new System.Windows.Forms.Label();
             this.Card = new System.Windows.Forms.Panel();
             this.TableBox = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -39,19 +38,9 @@
             this.txtPhoneCustomer = new System.Windows.Forms.TextBox();
             this.un = new System.Windows.Forms.Label();
             this.txtUsernameCustomer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Card.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // adminLogo
-            // 
-            this.adminLogo.AutoSize = true;
-            this.adminLogo.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminLogo.ForeColor = System.Drawing.Color.Teal;
-            this.adminLogo.Location = new System.Drawing.Point(20, 15);
-            this.adminLogo.Name = "adminLogo";
-            this.adminLogo.Size = new System.Drawing.Size(163, 46);
-            this.adminLogo.TabIndex = 46;
-            this.adminLogo.Text = "Customer";
             // 
             // Card
             // 
@@ -121,7 +110,7 @@
             // 
             // addCustomer
             // 
-            this.addCustomer.BackColor = System.Drawing.Color.Gainsboro;
+            this.addCustomer.BackColor = System.Drawing.Color.LightSeaGreen;
             this.addCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCustomer.Location = new System.Drawing.Point(243, 298);
             this.addCustomer.Name = "addCustomer";
@@ -185,11 +174,22 @@
             this.txtUsernameCustomer.Size = new System.Drawing.Size(148, 24);
             this.txtUsernameCustomer.TabIndex = 40;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Harlow Solid Italic", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(930, 66);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Customer";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // NewCusControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.adminLogo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Card);
             this.Name = "NewCusControl";
             this.Size = new System.Drawing.Size(930, 670);
@@ -197,13 +197,10 @@
             this.Card.ResumeLayout(false);
             this.Card.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label adminLogo;
         private System.Windows.Forms.Panel Card;
         private System.Windows.Forms.ComboBox TableBox;
         private System.Windows.Forms.TextBox txtID;
@@ -214,5 +211,6 @@
         private System.Windows.Forms.TextBox txtPhoneCustomer;
         private System.Windows.Forms.Label un;
         private System.Windows.Forms.TextBox txtUsernameCustomer;
+        private System.Windows.Forms.Label label2;
     }
 }
