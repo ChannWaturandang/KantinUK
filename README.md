@@ -3,10 +3,13 @@ This is a Desktop Application made for Unklab's Canteen Cashier, where the appli
 
 - Staff Login
 - Staff Register
-- New customer input
-- Menu list & System add orders
+- New order input
+  - Input Customer
+  - Add orders
+  - Checkout
+- Transaction history
 - Table selection
-- View order Receipt
+- About
 
 //=======================================================================\\
 
